@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct QuestionPageView: View {
+    @State private var importing = false
+    @State private var importStatus: String = "Not started"
     var body: some View {
         VStack {
             Spacer()
@@ -15,6 +17,7 @@ struct QuestionPageView: View {
             Spacer()
             Button {
                 // QuestionsListView.self
+                importing = true
             } label: {
                 Text("Select and upload file")
                     .foregroundColor(.white)
@@ -25,6 +28,20 @@ struct QuestionPageView: View {
                     .cornerRadius(10)
                     .padding(20)
             }
+            .fileImporter(
+                isPresented: $importing,
+                allowedContentTypes: [.plainText]
+            ) { result in
+                switch result {
+                case .success(let file):
+                    importStatus = "Successful!!"
+                    print(file.absoluteString)
+                case .failure(let error):
+                    importStatus = "Failed!!"
+                    print(error.localizedDescription)
+                }
+            }
+            Text("Import Status: " + importStatus)
             Spacer()
         }
         .padding(20)

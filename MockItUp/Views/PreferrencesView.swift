@@ -8,14 +8,17 @@
 import SwiftUI
 
 struct PreferrencesView: View {
-    @State private var selectedLevel: Levels = .easy
+    
+    
+    @EnvironmentObject var preferencesViewModel: PreferencesViewModel
+
+//    @State private var selectedLevel: Levels = .easy
     @State var jobType: String = ""
-    @State var level: String = ""
+    @State var level: String = "asd"
     @State var yoe: String = ""
     @State var companyName: String = ""
     @State var jobDescription: String = ""
-    
-//    @EnvironmentObject var preferencesViewModel: PreferencesViewModel
+//    var s = preferencesViewModel.getItems()
     
     var body: some View {
         VStack {

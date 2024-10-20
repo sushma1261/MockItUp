@@ -24,6 +24,8 @@
 		089774692CC33C5D00AD50F6 /* MockItUpTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 089774682CC33C5D00AD50F6 /* MockItUpTests.swift */; };
 		089774732CC33C5D00AD50F6 /* MockItUpUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 089774722CC33C5D00AD50F6 /* MockItUpUITests.swift */; };
 		089774752CC33C5D00AD50F6 /* MockItUpUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 089774742CC33C5D00AD50F6 /* MockItUpUITestsLaunchTests.swift */; };
+		08C8A4532CC5970400662E21 /* ImageDemoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08C8A4522CC5970400662E21 /* ImageDemoView.swift */; };
+		08C8A4552CC5991900662E21 /* TabbedViewForStorageDemo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08C8A4542CC5991900662E21 /* TabbedViewForStorageDemo.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,6 +66,8 @@
 		0897746E2CC33C5D00AD50F6 /* MockItUpUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MockItUpUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		089774722CC33C5D00AD50F6 /* MockItUpUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockItUpUITests.swift; sourceTree = "<group>"; };
 		089774742CC33C5D00AD50F6 /* MockItUpUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockItUpUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		08C8A4522CC5970400662E21 /* ImageDemoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDemoView.swift; sourceTree = "<group>"; };
+		08C8A4542CC5991900662E21 /* TabbedViewForStorageDemo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabbedViewForStorageDemo.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -110,6 +114,8 @@
 				084315AD2CC471C600FC4A72 /* QuestionPageView.swift */,
 				084315AF2CC471D200FC4A72 /* FeedbackView.swift */,
 				084315B62CC48A0F00FC4A72 /* MainView.swift */,
+				08C8A4522CC5970400662E21 /* ImageDemoView.swift */,
+				08C8A4542CC5991900662E21 /* TabbedViewForStorageDemo.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -324,9 +330,11 @@
 				084315A62CC4717500FC4A72 /* PreferrencesView.swift in Sources */,
 				084315B72CC48A0F00FC4A72 /* MainView.swift in Sources */,
 				084315AC2CC471B300FC4A72 /* HomeView.swift in Sources */,
+				08C8A4552CC5991900662E21 /* TabbedViewForStorageDemo.swift in Sources */,
 				084315AE2CC471C600FC4A72 /* QuestionPageView.swift in Sources */,
 				084315B02CC471D200FC4A72 /* FeedbackView.swift in Sources */,
 				084315BB2CC495FF00FC4A72 /* PreferencesViewModel.swift in Sources */,
+				08C8A4532CC5970400662E21 /* ImageDemoView.swift in Sources */,
 				084315A82CC4718D00FC4A72 /* SignInView.swift in Sources */,
 				084315B92CC4951F00FC4A72 /* PreferencesModel.swift in Sources */,
 				089774582CC33C5B00AD50F6 /* MockItUpApp.swift in Sources */,

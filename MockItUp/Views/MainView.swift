@@ -9,6 +9,7 @@ import SwiftUI
 
 struct MainView: View {
     @State var selection: String = ""
+    @StateObject var preferencesViewModel: PreferencesViewModel = PreferencesViewModel()
     var body: some View {
         TabView(selection: $selection) {
             NavigationStack() {
@@ -20,8 +21,6 @@ struct MainView: View {
                     .renderingMode(.template)
             }
             .tag(0)
-            
-            
             
             NavigationStack() {
                 PreferrencesView()
@@ -46,18 +45,19 @@ struct MainView: View {
             .tag(2)
             
             NavigationStack() {
-                Text("My Account")
-                    .navigationTitle("My Account")
+                QuestionPageView()
+                    .navigationTitle("Questions")
                 
             }
             .tabItem {
-                Text("My Account")
+                Text("Questions")
                 Image(systemName: "person.fill")
                 
             }
             .tag(3)
             
         }
+        .environmentObject(preferencesViewModel)
     }
 }
 
