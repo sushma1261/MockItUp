@@ -44,18 +44,17 @@ struct MainView: View {
             }
             .tag(2)
             
-//            NavigationStack() {
-//                QuestionPageView(questionModel: <#T##QuestionModel#>)
-//                    .navigationTitle("Questions")
-//                
-//            }
-//            .tabItem {
-//                Text("Questions")
-//                Image(systemName: "person.fill")
-//                
-//            }
-//            .tag(3)
-            
+            NavigationStack() {
+                Text("My Account")
+                    .navigationTitle("My Account")
+                
+            }
+            .tabItem {
+                Text("My Account")
+                Image(systemName: "person.fill")
+                
+            }
+            .tag(3)
         }
 //        .environmentObject(preferencesViewModel)
     }
