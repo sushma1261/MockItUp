@@ -8,19 +8,23 @@
 import SwiftUI
 
 struct PreferrencesView: View {
-    @State private var selectedLevel: Levels = .easy
+    
+    
+//    @EnvironmentObject var preferencesViewModel: PreferencesViewModel
+
+//    @State private var selectedLevel: Levels = .easy
     @State var jobType: String = ""
-    @State var level: String = ""
+    @State var level: String = "asd"
     @State var yoe: String = ""
     @State var companyName: String = ""
     @State var jobDescription: String = ""
     
-//    @EnvironmentObject var preferencesViewModel: PreferencesViewModel
+    @StateObject var preference: PreferencesViewModel = PreferencesViewModel()
     
     var body: some View {
         VStack {
             HStack {
-                TextField("Job Type", text: $jobType)
+                TextField("Job Type", text: $preference.level)
                     .padding(.horizontal)
                     .frame(height: 55)
                     .background(Color(UIColor.secondarySystemBackground))
@@ -53,6 +57,7 @@ struct PreferrencesView: View {
                 .cornerRadius(10)
             Button {
                 // QuestionsListView.self
+                preference.savePreferences()
             } label: {
                 Text("Submit")
                     .foregroundColor(.white)
@@ -62,7 +67,6 @@ struct PreferrencesView: View {
                     .background(Color.accentColor)
                     .cornerRadius(10)
                     .padding(20)
-                
             }
             Spacer()
         }
