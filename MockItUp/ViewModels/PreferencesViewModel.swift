@@ -9,36 +9,21 @@ import Foundation
 
 class PreferencesViewModel: ObservableObject {
     
-    @Published var preferences: PreferencesModel
-//    = [] {
-//        didSet {
-//            savePreferencesToUserDefaults()
-//        }
-//    }
-    
+    @Published var level: String = ""
     let JOB_PREFERENCES: String = "job_preferences"
     
     init() {
-//        getItems()
-        self.preferences = PreferencesModel(id: "Id1", level: "Easy")
+        getPreferences()
     }
     
-    func getItems() -> PreferencesModel {
-//        self.preferences = PreferencesModel(id: "Id1", level: "Easy")
-        return preferences;
-//        guard
-//            let data = UserDefaults.standard.data(forKey: JOB_PREFERENCES),
-//            let savedItems = try? JSONDecoder().decode(PreferencesModel.self, from: data)
-//        
-//        else { return }
-//        self.preferences = savedItems
-//        print(savedItems)
+    func getPreferences() {
+//        let preferences = UserDefaults.standard.value(forKey: JOB_PREFERENCES) as! PreferencesModel
+//        self.level = preferences.level ?? ""
     }
     
-//    func savePreferencesToUserDefaults() {
-//        if let encodedData = try? JSONEncoder().encode(preferences) {
-//            UserDefaults.standard.set(encodedData, forKey: JOB_PREFERENCES)
-//        }
-//    }
+    func savePreferences() {
+//        let preferences = PreferencesModel(level: level)
+        UserDefaults.standard.set(level, forKey: JOB_PREFERENCES)
+    }
     
 }

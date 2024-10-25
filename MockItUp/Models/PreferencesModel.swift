@@ -17,7 +17,7 @@ struct PreferencesModel: Identifiable, Decodable, Encodable {
 //    let companyName: String?
 //    let jobDescription: String?
     
-    init(id: String, level: String
+    init(id: String = UUID().uuidString, level: String
 //         ,question: String,
 //         jobType: String,
 //         yoe: NSNumber,
@@ -32,7 +32,7 @@ struct PreferencesModel: Identifiable, Decodable, Encodable {
 //        self.companyName = companyName
 //        self.jobDescription = jobDescription
     }
-    
+
     init(from decoder: Decoder) throws {
             let container = try decoder.container(keyedBy: CodingKeys.self)
             id = try container.decode(String.self, forKey: .id)

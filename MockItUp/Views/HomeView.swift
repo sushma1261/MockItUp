@@ -9,6 +9,7 @@ import SwiftUI
 
 struct HomeView: View {
     
+    @State var isPresented = false
     @State var questionsList: [QuestionModel] = [
         QuestionModel(title: "Practice Question 1"),
         QuestionModel(title: "Practice Question 2"),
@@ -20,13 +21,14 @@ struct HomeView: View {
         NavigationStack {
             List {
                 ForEach(questionsList) { ques in
-                    QuestionsListView(ques: ques)
-                        .safeAreaPadding(8)
+                    NavigationLink(destination: QuestionPageView(questionModel: ques)) {
+                        QuestionsListView(ques: ques)
+                            .safeAreaPadding(8)
+                    }
                 }
             }
         }
         .navigationTitle("Questions List")
-        
     }
 }
 

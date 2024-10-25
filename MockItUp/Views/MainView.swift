@@ -9,7 +9,7 @@ import SwiftUI
 
 struct MainView: View {
     @State var selection: String = ""
-    @StateObject var preferencesViewModel: PreferencesViewModel = PreferencesViewModel()
+//    @StateObject var preferencesViewModel: PreferencesViewModel = PreferencesViewModel()
     var body: some View {
         TabView(selection: $selection) {
             NavigationStack() {
@@ -44,20 +44,20 @@ struct MainView: View {
             }
             .tag(2)
             
-            NavigationStack() {
-                QuestionPageView()
-                    .navigationTitle("Questions")
-                
-            }
-            .tabItem {
-                Text("Questions")
-                Image(systemName: "person.fill")
-                
-            }
-            .tag(3)
+//            NavigationStack() {
+//                QuestionPageView(questionModel: <#T##QuestionModel#>)
+//                    .navigationTitle("Questions")
+//                
+//            }
+//            .tabItem {
+//                Text("Questions")
+//                Image(systemName: "person.fill")
+//                
+//            }
+//            .tag(3)
             
         }
-        .environmentObject(preferencesViewModel)
+//        .environmentObject(preferencesViewModel)
     }
 }
 

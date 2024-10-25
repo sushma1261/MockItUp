@@ -1,9 +1,5 @@
 # Storage Options Documentation
 
-
-
-## Overview
-
 This document consists of various ways we can store App data in iOS
 
 1. UserDefaults

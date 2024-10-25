@@ -8,12 +8,13 @@
 import SwiftUI
 
 struct QuestionPageView: View {
+    @State var questionModel: QuestionModel
     @State private var importing = false
     @State private var importStatus: String = "Not started"
     var body: some View {
         VStack {
             Spacer()
-            Text("Show the question!!")
+            Text(questionModel.question)
             Spacer()
             Button {
                 // QuestionsListView.self
@@ -49,5 +50,5 @@ struct QuestionPageView: View {
 }
 
 #Preview {
-    QuestionPageView()
+    QuestionPageView(questionModel: QuestionModel(title: "Practice question 1"))
 }
