@@ -24,6 +24,13 @@
 		089774692CC33C5D00AD50F6 /* MockItUpTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 089774682CC33C5D00AD50F6 /* MockItUpTests.swift */; };
 		089774732CC33C5D00AD50F6 /* MockItUpUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 089774722CC33C5D00AD50F6 /* MockItUpUITests.swift */; };
 		089774752CC33C5D00AD50F6 /* MockItUpUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 089774742CC33C5D00AD50F6 /* MockItUpUITestsLaunchTests.swift */; };
+		089C63432CCDF2CD004BD505 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 089C63422CCDF2CD004BD505 /* CustomTextField.swift */; };
+		089C63452CCEA5BC004BD505 /* QuestionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 089C63442CCEA5BC004BD505 /* QuestionViewModel.swift */; };
+		089C63492CCEF6FF004BD505 /* AuthorizationChecker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 089C63482CCEF6FF004BD505 /* AuthorizationChecker.swift */; };
+		089C634B2CCEF756004BD505 /* AVCaptureSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 089C634A2CCEF756004BD505 /* AVCaptureSession.swift */; };
+		089C634D2CCEFCB3004BD505 /* VideoContentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 089C634C2CCEFCB3004BD505 /* VideoContentViewModel.swift */; };
+		089C634F2CCEFCFB004BD505 /* Preview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 089C634E2CCEFCFB004BD505 /* Preview.swift */; };
+		089C63512CCEFD51004BD505 /* VideoContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 089C63502CCEFD51004BD505 /* VideoContentView.swift */; };
 		08C8A4532CC5970400662E21 /* ImageDemoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08C8A4522CC5970400662E21 /* ImageDemoView.swift */; };
 		08C8A4552CC5991900662E21 /* TabbedViewForStorageDemo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08C8A4542CC5991900662E21 /* TabbedViewForStorageDemo.swift */; };
 /* End PBXBuildFile section */
@@ -66,6 +73,13 @@
 		0897746E2CC33C5D00AD50F6 /* MockItUpUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MockItUpUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		089774722CC33C5D00AD50F6 /* MockItUpUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockItUpUITests.swift; sourceTree = "<group>"; };
 		089774742CC33C5D00AD50F6 /* MockItUpUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockItUpUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		089C63422CCDF2CD004BD505 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
+		089C63442CCEA5BC004BD505 /* QuestionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionViewModel.swift; sourceTree = "<group>"; };
+		089C63482CCEF6FF004BD505 /* AuthorizationChecker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationChecker.swift; sourceTree = "<group>"; };
+		089C634A2CCEF756004BD505 /* AVCaptureSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AVCaptureSession.swift; sourceTree = "<group>"; };
+		089C634C2CCEFCB3004BD505 /* VideoContentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoContentViewModel.swift; sourceTree = "<group>"; };
+		089C634E2CCEFCFB004BD505 /* Preview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Preview.swift; sourceTree = "<group>"; };
+		089C63502CCEFD51004BD505 /* VideoContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoContentView.swift; sourceTree = "<group>"; };
 		08C8A4522CC5970400662E21 /* ImageDemoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDemoView.swift; sourceTree = "<group>"; };
 		08C8A4542CC5991900662E21 /* TabbedViewForStorageDemo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabbedViewForStorageDemo.swift; sourceTree = "<group>"; };
 		08C8A4582CC5E54100662E21 /* StorageOptionsDocumentation.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = StorageOptionsDocumentation.md; sourceTree = "<group>"; };
@@ -108,6 +122,7 @@
 		084315A32CC46BCF00FC4A72 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				089C63412CCDF2B5004BD505 /* Common */,
 				084315A52CC4717500FC4A72 /* PreferrencesView.swift */,
 				084315A72CC4718C00FC4A72 /* SignInView.swift */,
 				084315A92CC471A200FC4A72 /* QuestionsListView.swift */,
@@ -117,6 +132,10 @@
 				084315B62CC48A0F00FC4A72 /* MainView.swift */,
 				08C8A4522CC5970400662E21 /* ImageDemoView.swift */,
 				08C8A4542CC5991900662E21 /* TabbedViewForStorageDemo.swift */,
+				089C63482CCEF6FF004BD505 /* AuthorizationChecker.swift */,
+				089C634A2CCEF756004BD505 /* AVCaptureSession.swift */,
+				089C634E2CCEFCFB004BD505 /* Preview.swift */,
+				089C63502CCEFD51004BD505 /* VideoContentView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -125,6 +144,8 @@
 			isa = PBXGroup;
 			children = (
 				084315BA2CC495FE00FC4A72 /* PreferencesViewModel.swift */,
+				089C63442CCEA5BC004BD505 /* QuestionViewModel.swift */,
+				089C634C2CCEFCB3004BD505 /* VideoContentViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -195,6 +216,14 @@
 				089774742CC33C5D00AD50F6 /* MockItUpUITestsLaunchTests.swift */,
 			);
 			path = MockItUpUITests;
+			sourceTree = "<group>";
+		};
+		089C63412CCDF2B5004BD505 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				089C63422CCDF2CD004BD505 /* CustomTextField.swift */,
+			);
+			path = Common;
 			sourceTree = "<group>";
 		};
 		08C8A4592CC5EB7D00662E21 /* Documents */ = {
@@ -337,18 +366,25 @@
 			files = (
 				084315B52CC47BA200FC4A72 /* Levels.swift in Sources */,
 				084315AA2CC471A200FC4A72 /* QuestionsListView.swift in Sources */,
+				089C634F2CCEFCFB004BD505 /* Preview.swift in Sources */,
 				084315A62CC4717500FC4A72 /* PreferrencesView.swift in Sources */,
 				084315B72CC48A0F00FC4A72 /* MainView.swift in Sources */,
+				089C634B2CCEF756004BD505 /* AVCaptureSession.swift in Sources */,
 				084315AC2CC471B300FC4A72 /* HomeView.swift in Sources */,
+				089C63492CCEF6FF004BD505 /* AuthorizationChecker.swift in Sources */,
 				08C8A4552CC5991900662E21 /* TabbedViewForStorageDemo.swift in Sources */,
+				089C63452CCEA5BC004BD505 /* QuestionViewModel.swift in Sources */,
+				089C634D2CCEFCB3004BD505 /* VideoContentViewModel.swift in Sources */,
 				084315AE2CC471C600FC4A72 /* QuestionPageView.swift in Sources */,
 				084315B02CC471D200FC4A72 /* FeedbackView.swift in Sources */,
+				089C63512CCEFD51004BD505 /* VideoContentView.swift in Sources */,
 				084315BB2CC495FF00FC4A72 /* PreferencesViewModel.swift in Sources */,
 				08C8A4532CC5970400662E21 /* ImageDemoView.swift in Sources */,
 				084315A82CC4718D00FC4A72 /* SignInView.swift in Sources */,
 				084315B92CC4951F00FC4A72 /* PreferencesModel.swift in Sources */,
 				089774582CC33C5B00AD50F6 /* MockItUpApp.swift in Sources */,
 				084315B22CC477EA00FC4A72 /* QuestionModel.swift in Sources */,
+				089C63432CCDF2CD004BD505 /* CustomTextField.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -514,6 +550,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"MockItUp/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSCameraUsageDescription = "I'll use camera!";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -542,6 +579,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"MockItUp/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSCameraUsageDescription = "I'll use camera!";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
