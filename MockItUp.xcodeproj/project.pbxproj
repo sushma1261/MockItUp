@@ -46,6 +46,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		081B6ACA2CD813CC00D6467C /* StateManagement.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = StateManagement.md; sourceTree = "<group>"; };
 		084315A52CC4717500FC4A72 /* PreferrencesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferrencesView.swift; sourceTree = "<group>"; };
 		084315A72CC4718C00FC4A72 /* SignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
 		084315A92CC471A200FC4A72 /* QuestionsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionsListView.swift; sourceTree = "<group>"; };
@@ -201,6 +202,7 @@
 			isa = PBXGroup;
 			children = (
 				08C8A4582CC5E54100662E21 /* StorageOptionsDocumentation.md */,
+				081B6ACA2CD813CC00D6467C /* StateManagement.md */,
 			);
 			path = Documents;
 			sourceTree = "<group>";
