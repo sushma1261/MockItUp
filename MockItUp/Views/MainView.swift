@@ -45,7 +45,7 @@ struct MainView: View {
             .tag(2)
             
             NavigationStack() {
-                Text("My Account")
+                VideoContentView()
                     .navigationTitle("My Account")
                 
             }

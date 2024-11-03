@@ -7,25 +7,23 @@
 
 import SwiftUI
 
+
 struct HomeView: View {
     
     @State var isPresented = false
-    @State var questionsList: [QuestionModel] = [
-        QuestionModel(title: "Practice Question 1"),
-        QuestionModel(title: "Practice Question 2"),
-        QuestionModel(title: "Practice Question 3"),
-        QuestionModel(title: "Practice Question 4")
-    ]
+    
+    @ObservedObject var questionsList: QuestionViewModel = QuestionViewModel()
     
     var body: some View {
         NavigationStack {
             List {
-                ForEach(questionsList) { ques in
+                ForEach(questionsList.questionsList) { ques in
                     NavigationLink(destination: QuestionPageView(questionModel: ques)) {
                         QuestionsListView(ques: ques)
                             .safeAreaPadding(8)
                     }
                 }
+//                Spacer()
             }
         }
         .navigationTitle("Questions List")
