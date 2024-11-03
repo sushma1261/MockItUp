@@ -33,6 +33,7 @@
 		089C63512CCEFD51004BD505 /* VideoContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 089C63502CCEFD51004BD505 /* VideoContentView.swift */; };
 		08C8A4532CC5970400662E21 /* ImageDemoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08C8A4522CC5970400662E21 /* ImageDemoView.swift */; };
 		08C8A4552CC5991900662E21 /* TabbedViewForStorageDemo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08C8A4542CC5991900662E21 /* TabbedViewForStorageDemo.swift */; };
+		08E573482CD14E0B007F693D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08E573472CD14E0B007F693D /* ContentView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -83,6 +84,7 @@
 		08C8A4522CC5970400662E21 /* ImageDemoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDemoView.swift; sourceTree = "<group>"; };
 		08C8A4542CC5991900662E21 /* TabbedViewForStorageDemo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabbedViewForStorageDemo.swift; sourceTree = "<group>"; };
 		08C8A4582CC5E54100662E21 /* StorageOptionsDocumentation.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = StorageOptionsDocumentation.md; sourceTree = "<group>"; };
+		08E573472CD14E0B007F693D /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -136,6 +138,7 @@
 				089C634A2CCEF756004BD505 /* AVCaptureSession.swift */,
 				089C634E2CCEFCFB004BD505 /* Preview.swift */,
 				089C63502CCEFD51004BD505 /* VideoContentView.swift */,
+				08E573472CD14E0B007F693D /* ContentView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -376,6 +379,7 @@
 				089C63452CCEA5BC004BD505 /* QuestionViewModel.swift in Sources */,
 				089C634D2CCEFCB3004BD505 /* VideoContentViewModel.swift in Sources */,
 				084315AE2CC471C600FC4A72 /* QuestionPageView.swift in Sources */,
+				08E573482CD14E0B007F693D /* ContentView.swift in Sources */,
 				084315B02CC471D200FC4A72 /* FeedbackView.swift in Sources */,
 				089C63512CCEFD51004BD505 /* VideoContentView.swift in Sources */,
 				084315BB2CC495FF00FC4A72 /* PreferencesViewModel.swift in Sources */,

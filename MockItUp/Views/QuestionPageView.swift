@@ -28,7 +28,7 @@ struct QuestionPageView: View {
                         .frame(maxWidth: .infinity)
                         .background(Color.accentColor)
                         .cornerRadius(10)
-                        .padding(20)
+                        .padding(10)
                 }
                 .fileImporter(
                     isPresented: $importing,
@@ -43,19 +43,53 @@ struct QuestionPageView: View {
                         print(error.localizedDescription)
                     }
                 }
-                Text("Import Status: " + importStatus)
-                NavigationLink {
-                    FeedbackView()
-                } label: {
-                    Text("Submit")
-                        .foregroundColor(.white)
-                        .font(.headline)
-                        .frame(height: 55)
-                        .frame(maxWidth: .infinity)
-                        .background(Color.accentColor)
-                        .cornerRadius(10)
-                        .padding(20)
+//                Text("Import Status: " + importStatus)
+                if(importStatus != "Successful!!") {
+                    HStack {
+                        Spacer()
+                        Button {
+                            importing = true
+                        } label: {
+                            Text("Start Recording")
+                                .foregroundColor(.white)
+                                .font(.headline)
+                                .frame(height: 55)
+                                .frame(maxWidth: .infinity)
+                                .background(Color.accentColor)
+                                .cornerRadius(10)
+                                .padding(10)
+                        }
+                        
+                        Button {
+                            importing = true
+                        } label: {
+                            Text("Stop Recording")
+                                .foregroundColor(.white)
+                                .font(.headline)
+                                .frame(height: 55)
+                                .frame(maxWidth: .infinity)
+                                .background(Color.red)
+                                .cornerRadius(10)
+                                .padding(10)
+                        }
+                        Spacer()
+                    }
                 }
+                if importStatus == "Successful!!" {
+                    NavigationLink {
+                        FeedbackView()
+                    } label: {
+                        Text("Submit")
+                            .foregroundColor(.white)
+                            .font(.headline)
+                            .frame(height: 55)
+                            .frame(maxWidth: .infinity)
+                            .background(Color.accentColor)
+                            .cornerRadius(10)
+                            .padding(10)
+                    }
+                }
+                
                 Spacer()
             }
         }
