@@ -72,7 +72,6 @@ Sample screens:
 
 ![image](https://github.com/user-attachments/assets/f1f95c17-a318-4827-99d1-ae5b318c0932)
 
-
 ### **Technical Architecture**
 
 - Storage Considerations: Store audio/video files in some cloud to have access across any device.
@@ -92,3 +91,20 @@ Open Questions:
 
 - Where to get the dataset to train the models?
 - Should it be particular to only interviews or can be extended to other as well?
+
+Versio: 1.0
+
+Features/Values needed for MVP and the task breakdown:
+
+1. Ability to integrate with any free ai service and do basic prompt engineering.
+2. Move some hard coded data to cloud
+3. Integrate with GAuth or any authentication tool
+4. Video/Audios uploaded should be saved in cloud instead of local
+5. Feedback should come via prompt engineering. It shouldn't be hard-coded.
+6. Ability to add custom questions
+7. Ability to sort/filter the questions based on popularity etc.
+
+Mapping between features and value(s) to be delivered by your app:
+
+1. All the above 1-5 are values. Since we would need to have these in the app for the success criteria of the app.
+2. 6 and 7 are good to have and hence can be grouped into features.
