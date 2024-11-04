@@ -7,10 +7,13 @@
 
 import SwiftUI
 
+
 struct MainView: View {
-    @State var selection: String = ""
-//    @StateObject var preferencesViewModel: PreferencesViewModel = PreferencesViewModel()
+    @State var selection = 0
+
+    @Environment(\.scenePhase) private var scenePhase
     var body: some View {
+//        Text(selection)
         TabView(selection: $selection) {
             NavigationStack() {
                 HomeView()
@@ -56,7 +59,22 @@ struct MainView: View {
             }
             .tag(3)
         }
-//        .environmentObject(preferencesViewModel)
+        .onChange(of: scenePhase) { oldPhase, newPhase in
+            print(oldPhase, newPhase)
+                switch newPhase {
+                case .active:
+                    print("Active")
+                    break
+                case .inactive:
+                    print("Inactive")
+                    break
+                case .background:
+                    print("Moved to background")
+                    break
+                @unknown default:
+                    fatalError("The app has entered an unknown state.")
+                }
+            }
     }
 }
 
