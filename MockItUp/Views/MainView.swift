@@ -9,10 +9,11 @@ import SwiftUI
 
 
 struct MainView: View {
-    @State var selection: String = ""
+    @State var selection = 0
 
     @Environment(\.scenePhase) private var scenePhase
     var body: some View {
+//        Text(selection)
         TabView(selection: $selection) {
             NavigationStack() {
                 HomeView()
@@ -63,15 +64,12 @@ struct MainView: View {
                 switch newPhase {
                 case .active:
                     print("Active")
-                    print(selection)
                     break
                 case .inactive:
                     print("Inactive")
-                    print(selection)
                     break
                 case .background:
                     print("Moved to background")
-                    print(selection)
                     break
                 @unknown default:
                     fatalError("The app has entered an unknown state.")
