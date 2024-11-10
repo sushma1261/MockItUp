@@ -24,4 +24,3 @@ struct VideoContentView: View {
 #Preview {
     VideoContentView()
 }
-
