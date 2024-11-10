@@ -552,9 +552,13 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"MockItUp/Preview Content\"";
+				DEVELOPMENT_TEAM = 9ZF9BX8WR8;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSCameraUsageDescription = "I'll use camera!";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "I'll Use Microphone";
+				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "I'll use photos";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "Need access to save recordings";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -581,9 +585,13 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"MockItUp/Preview Content\"";
+				DEVELOPMENT_TEAM = 9ZF9BX8WR8;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_NSCameraUsageDescription = "I'll use camera!";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "I'll Use Microphone";
+				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "I'll use photos";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "Need access to save recordings";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
