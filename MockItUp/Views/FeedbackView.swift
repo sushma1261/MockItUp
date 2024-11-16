@@ -12,14 +12,15 @@ struct FeedbackView: View {
         NavigationStack {
             VStack {
                 VStack {
-                    Text("Feedback: ")
-                    Text("Feedback text goes here")
+//                    Text("Feedback: ")
+                    Text("You communicate with confidence and clarity, engaging well with others. To enhance effectiveness, focus on active listening and structuring your responses to improve flow and clarity. Engaging the audience with check-ins or clarifying questions can create a more interactive experience. These adjustments will further strengthen your communication impact.")
                     Spacer()
                         
                 }
                 VStack {
-                    Text("References: ")
-                    Text("Feedback text goes here")
+                    Text("Practice: ")
+                    Text("1. TED Talks: Watching TED Talks and analyzing speakers' techniques can offer insights into effective communication, body language, and audience engagement. Try summarizing a talk to practice clarity.")
+                    Text("2. Practicing with Peers: Engage in structured peer-to-peer feedback, recording yourself if possible to refine delivery and flow.")
                     Spacer()
                 }
                 Spacer()

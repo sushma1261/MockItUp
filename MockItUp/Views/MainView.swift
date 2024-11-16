@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct MainView: View {
-    @State var selection: String = ""
+    @State var selection = 0
 //    @StateObject var preferencesViewModel: PreferencesViewModel = PreferencesViewModel()
     var body: some View {
         TabView(selection: $selection) {
@@ -45,7 +45,8 @@ struct MainView: View {
             .tag(2)
             
             NavigationStack() {
-                VideoContentView()
+                ContentView()
+//                Text("My Account")
                     .navigationTitle("My Account")
                 
             }
