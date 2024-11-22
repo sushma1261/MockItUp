@@ -14,7 +14,8 @@ struct PreferrencesView: View {
     @State var companyName: String = ""
     @State var jobDescription: String = ""
     @ObservedObject var preference: PreferencesViewModel = PreferencesViewModel()
-    
+    @State private var isRunning = false
+
     
     var body: some View {
         NavigationStack
@@ -39,6 +40,20 @@ struct PreferrencesView: View {
                         .cornerRadius(10)
                         .padding(20)
                 }
+                Button {
+                    isRunning = true
+                    Task {
+                        do {
+                            try await preference.getFromLLM()
+                        } catch {
+                            print(error)
+                        }
+                        isRunning = false
+                    }
+                } label: {
+                   Text("label")
+                }
+                .disabled(isRunning)
                 /*.navigationDestination(isPresented: $isPresented, destination: HomeView) */
                 Spacer()
             }
