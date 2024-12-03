@@ -9,35 +9,38 @@ import SwiftUI
 
 @main
 struct MockItUpApp: App {
-//    @StateObject private var store = ScrumStore()
-//    @State private var errorWrapper: ErrorWrapper?
+    @StateObject private var store = AudioStore()
+    @State private var errorWrapper: ErrorWrapper?
 
     var body: some Scene {
         WindowGroup {
-            MainView()
-//            ScrumsView(scrums: $store.scrums) {
-//                Task {
-//                    do {
-//                        try await store.save(scrums: store.scrums)
-//                    } catch {
-//                        errorWrapper = ErrorWrapper(error: error,
-//                                                    guidance: "Try again later.")
-//                    }
-//                }
-//            }
-//            .task {
-//                do {
-//                    try await store.load()
-//                } catch {
-//                    errorWrapper = ErrorWrapper(error: error,
-//                                                guidance: "Scrumdinger will load sample data and continue.")
-//                }
-//            }
-//            .sheet(item: $errorWrapper) {
-//                store.scrums = DailyScrum.sampleData
-//            } content: { wrapper in
-//                ErrorView(errorWrapper: wrapper)
-//            }
-        }
+            MainView(audios: $store.audios) {
+                            Task {
+                                do {
+                                    print("MockItUp calling store save")
+                                    try await store.save(audioAnswers: store.audios)
+                                } catch {
+                                    print("Save error", error)
+                                    errorWrapper = ErrorWrapper(error: error,
+                                                                guidance: "Try again later.")
+                                }
+                            }
+                        }
+                        .task {
+                            do {
+                                print("MockItUp calling store load")
+                                try await store.load()
+                            } catch {
+                                print("Load error", error)
+                                errorWrapper = ErrorWrapper(error: error,
+                                                            guidance: "load sample data and continue.")
+                            }
+                        }
+                        .sheet(item: $errorWrapper) {
+                            store.audios = QuestionModel.sampleData
+                        } content: { wrapper in
+                            ErrorView(errorWrapper: wrapper)
+                        }
+                    }
     }
 }

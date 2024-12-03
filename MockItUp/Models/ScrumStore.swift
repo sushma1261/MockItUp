@@ -23,6 +23,7 @@ class ScrumStore: ObservableObject {
                 return []
             }
             let dailyScrums = try JSONDecoder().decode([DailyScrum].self, from: data)
+            print(dailyScrums)
             return dailyScrums
         }
         let scrums = try await task.value
@@ -34,6 +35,8 @@ class ScrumStore: ObservableObject {
             let data = try JSONEncoder().encode(scrums)
             let outfile = try Self.fileURL()
             try data.write(to: outfile)
+            print(outfile)
+            print(data)
         }
         _ = try await task.value
     }

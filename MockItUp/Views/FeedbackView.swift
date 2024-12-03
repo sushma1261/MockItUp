@@ -8,9 +8,16 @@
 import SwiftUI
 
 struct FeedbackView: View {
+    @State var speechRecognizer: SpeechRecognizer
     var body: some View {
         NavigationStack {
             VStack {
+                VStack {
+                    Text("Transcript: ")
+                    Text(speechRecognizer.transcript)
+                    Spacer()
+                        
+                }
                 VStack {
 //                    Text("Feedback: ")
                     Text("You communicate with confidence and clarity, engaging well with others. To enhance effectiveness, focus on active listening and structuring your responses to improve flow and clarity. Engaging the audience with check-ins or clarifying questions can create a more interactive experience. These adjustments will further strengthen your communication impact.")
@@ -32,5 +39,5 @@ struct FeedbackView: View {
 }
 
 #Preview {
-    FeedbackView()
+    FeedbackView(speechRecognizer: SpeechRecognizer())
 }

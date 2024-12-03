@@ -20,6 +20,7 @@ struct MeetingView: View {
             VStack {
                 MeetingHeaderView(secondsElapsed: scrumTimer.secondsElapsed, secondsRemaining: scrumTimer.secondsRemaining, theme: scrum.theme)
                 MeetingTimerView(speakers: scrumTimer.speakers, isRecording: isRecording, theme: scrum.theme)
+                Text(speechRecognizer.transcript)
                 MeetingFooterView(speakers: scrumTimer.speakers, skipAction: scrumTimer.skipSpeaker)
             }
         }
@@ -42,6 +43,8 @@ struct MeetingView: View {
         }
         speechRecognizer.resetTranscript()
         speechRecognizer.startTranscribing()
+        print("Speech transcript:::")
+        print(speechRecognizer.transcript)
         isRecording = true
         scrumTimer.startScrum()
     }
