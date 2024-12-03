@@ -6,7 +6,7 @@
 //
 
 import Foundation
-
+import GoogleGenerativeAI
 
 var list = ["Describe a challenging web development project you worked on and how you overcame technical hurdles.",
 "Explain your understanding of RESTful APIs, and provide an example of a well-designed API endpoint you would create for a social media application.",
@@ -31,7 +31,4 @@ class QuestionViewModel: ObservableObject {
     func getQuestion() -> [QuestionModel] {
         return questionsList
     }
-    
-    
-    
 }

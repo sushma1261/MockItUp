@@ -23,6 +23,8 @@
 		087AA48D2CF6A3DB0022423D /* ScrumStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 087AA4832CF6A3DB0022423D /* ScrumStore.swift */; };
 		087AA48E2CF6A3DB0022423D /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 087AA4862CF6A3DB0022423D /* Theme.swift */; };
 		087AA4B12CF6AA2D0022423D /* ding.wav in Resources */ = {isa = PBXBuildFile; fileRef = 087AA4AF2CF6AA2D0022423D /* ding.wav */; };
+		088012D42CE9AE7900F4EC79 /* GoogleGenerativeAI in Frameworks */ = {isa = PBXBuildFile; productRef = 088012D32CE9AE7900F4EC79 /* GoogleGenerativeAI */; };
+		088012D82CE9B03400F4EC79 /* APIKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 088012D72CE9B03000F4EC79 /* APIKey.swift */; };
 		089774582CC33C5B00AD50F6 /* MockItUpApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 089774572CC33C5B00AD50F6 /* MockItUpApp.swift */; };
 		0897745C2CC33C5D00AD50F6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0897745B2CC33C5D00AD50F6 /* Assets.xcassets */; };
 		0897745F2CC33C5D00AD50F6 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0897745E2CC33C5D00AD50F6 /* Preview Assets.xcassets */; };
@@ -67,6 +69,7 @@
 		087AA4852CF6A3DB0022423D /* SpeechRecognizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeechRecognizer.swift; sourceTree = "<group>"; };
 		087AA4862CF6A3DB0022423D /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
 		087AA4AF2CF6AA2D0022423D /* ding.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = ding.wav; sourceTree = "<group>"; };
+		088012D72CE9B03000F4EC79 /* APIKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIKey.swift; sourceTree = "<group>"; };
 		089774542CC33C5B00AD50F6 /* MockItUp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MockItUp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		089774572CC33C5B00AD50F6 /* MockItUpApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockItUpApp.swift; sourceTree = "<group>"; };
 		0897745B2CC33C5D00AD50F6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -90,6 +93,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				088012D42CE9AE7900F4EC79 /* GoogleGenerativeAI in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -143,6 +147,7 @@
 		084315B32CC47B7600FC4A72 /* enums */ = {
 			isa = PBXGroup;
 			children = (
+				088012D72CE9B03000F4EC79 /* APIKey.swift */,
 				084315B42CC47BA200FC4A72 /* Levels.swift */,
 			);
 			path = enums;
@@ -316,6 +321,9 @@
 				Base,
 			);
 			mainGroup = 0897744B2CC33C5B00AD50F6;
+			packageReferences = (
+				088012D22CE9AE7900F4EC79 /* XCRemoteSwiftPackageReference "generative-ai-swift" */,
+			);
 			productRefGroup = 089774552CC33C5B00AD50F6 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -371,6 +379,15 @@
 				087AA48D2CF6A3DB0022423D /* ScrumStore.swift in Sources */,
 				087AA48E2CF6A3DB0022423D /* Theme.swift in Sources */,
 				085DF41D2CF81E1200254764 /* AudioAnswer.swift in Sources */,
+				084315AA2CC471A200FC4A72 /* QuestionsListView.swift in Sources */,
+				088012D82CE9B03400F4EC79 /* APIKey.swift in Sources */,
+				089C634F2CCEFCFB004BD505 /* Preview.swift in Sources */,
+				084315A62CC4717500FC4A72 /* PreferrencesView.swift in Sources */,
+				084315B72CC48A0F00FC4A72 /* MainView.swift in Sources */,
+				089C634B2CCEF756004BD505 /* AVCaptureSession.swift in Sources */,
+				084315AC2CC471B300FC4A72 /* HomeView.swift in Sources */,
+				089C63492CCEF6FF004BD505 /* AuthorizationChecker.swift in Sources */,
+				08C8A4552CC5991900662E21 /* TabbedViewForStorageDemo.swift in Sources */,
 				089C63452CCEA5BC004BD505 /* QuestionViewModel.swift in Sources */,
 				089C634D2CCEFCB3004BD505 /* VideoContentViewModel.swift in Sources */,
 				084315BB2CC495FF00FC4A72 /* PreferencesViewModel.swift in Sources */,
@@ -712,6 +729,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		088012D22CE9AE7900F4EC79 /* XCRemoteSwiftPackageReference "generative-ai-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/google/generative-ai-swift";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.5.6;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		088012D32CE9AE7900F4EC79 /* GoogleGenerativeAI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 088012D22CE9AE7900F4EC79 /* XCRemoteSwiftPackageReference "generative-ai-swift" */;
+			productName = GoogleGenerativeAI;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 0897744C2CC33C5B00AD50F6 /* Project object */;
 }
