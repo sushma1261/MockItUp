@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		082EFABA2CFFB982008C0829 /* FeedbackViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 082EFAB92CFFB97B008C0829 /* FeedbackViewModel.swift */; };
 		084315B22CC477EA00FC4A72 /* QuestionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 084315B12CC477EA00FC4A72 /* QuestionModel.swift */; };
 		084315B52CC47BA200FC4A72 /* Levels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 084315B42CC47BA200FC4A72 /* Levels.swift */; };
 		084315B92CC4951F00FC4A72 /* PreferencesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 084315B82CC4951F00FC4A72 /* PreferencesModel.swift */; };
@@ -53,6 +54,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		082EFAB92CFFB97B008C0829 /* FeedbackViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackViewModel.swift; sourceTree = "<group>"; };
 		084315B12CC477EA00FC4A72 /* QuestionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionModel.swift; sourceTree = "<group>"; };
 		084315B42CC47BA200FC4A72 /* Levels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Levels.swift; sourceTree = "<group>"; };
 		084315B82CC4951F00FC4A72 /* PreferencesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferencesModel.swift; sourceTree = "<group>"; };
@@ -82,6 +84,7 @@
 		089C63442CCEA5BC004BD505 /* QuestionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionViewModel.swift; sourceTree = "<group>"; };
 		089C634C2CCEFCB3004BD505 /* VideoContentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoContentViewModel.swift; sourceTree = "<group>"; };
 		08C8A4582CC5E54100662E21 /* StorageOptionsDocumentation.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = StorageOptionsDocumentation.md; sourceTree = "<group>"; };
+		08F7D4302CFFDE5B00E71D3C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -137,6 +140,7 @@
 		084315A42CC46D8400FC4A72 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				082EFAB92CFFB97B008C0829 /* FeedbackViewModel.swift */,
 				084315BA2CC495FE00FC4A72 /* PreferencesViewModel.swift */,
 				089C63442CCEA5BC004BD505 /* QuestionViewModel.swift */,
 				089C634C2CCEFCB3004BD505 /* VideoContentViewModel.swift */,
@@ -184,6 +188,7 @@
 		089774562CC33C5B00AD50F6 /* MockItUp */ = {
 			isa = PBXGroup;
 			children = (
+				08F7D4302CFFDE5B00E71D3C /* Info.plist */,
 				08C8A4592CC5EB7D00662E21 /* Documents */,
 				084315B32CC47B7600FC4A72 /* enums */,
 				084315A42CC46D8400FC4A72 /* ViewModels */,
@@ -368,6 +373,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				084315B52CC47BA200FC4A72 /* Levels.swift in Sources */,
+				082EFABA2CFFB982008C0829 /* FeedbackViewModel.swift in Sources */,
 				085DF41F2CF81F3200254764 /* AudioHistory.swift in Sources */,
 				087AA4872CF6A3DB0022423D /* SpeechRecognizer.swift in Sources */,
 				087AA4882CF6A3DB0022423D /* AVPlayer+Ding.swift in Sources */,
@@ -379,15 +385,7 @@
 				087AA48D2CF6A3DB0022423D /* ScrumStore.swift in Sources */,
 				087AA48E2CF6A3DB0022423D /* Theme.swift in Sources */,
 				085DF41D2CF81E1200254764 /* AudioAnswer.swift in Sources */,
-				084315AA2CC471A200FC4A72 /* QuestionsListView.swift in Sources */,
 				088012D82CE9B03400F4EC79 /* APIKey.swift in Sources */,
-				089C634F2CCEFCFB004BD505 /* Preview.swift in Sources */,
-				084315A62CC4717500FC4A72 /* PreferrencesView.swift in Sources */,
-				084315B72CC48A0F00FC4A72 /* MainView.swift in Sources */,
-				089C634B2CCEF756004BD505 /* AVCaptureSession.swift in Sources */,
-				084315AC2CC471B300FC4A72 /* HomeView.swift in Sources */,
-				089C63492CCEF6FF004BD505 /* AuthorizationChecker.swift in Sources */,
-				08C8A4552CC5991900662E21 /* TabbedViewForStorageDemo.swift in Sources */,
 				089C63452CCEA5BC004BD505 /* QuestionViewModel.swift in Sources */,
 				089C634D2CCEFCB3004BD505 /* VideoContentViewModel.swift in Sources */,
 				084315BB2CC495FF00FC4A72 /* PreferencesViewModel.swift in Sources */,
@@ -560,6 +558,7 @@
 				DEVELOPMENT_TEAM = 9ZF9BX8WR8;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = MockItUp/Info.plist;
 				INFOPLIST_KEY_NSCameraUsageDescription = "I'll use camera!";
 				INFOPLIST_KEY_NSMicrophoneUsageDescription = "I'll Use Microphone";
 				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "I'll use photos";
@@ -594,6 +593,7 @@
 				DEVELOPMENT_TEAM = 9ZF9BX8WR8;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = MockItUp/Info.plist;
 				INFOPLIST_KEY_NSCameraUsageDescription = "I'll use camera!";
 				INFOPLIST_KEY_NSMicrophoneUsageDescription = "I'll Use Microphone";
 				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "I'll use photos";

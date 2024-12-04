@@ -18,7 +18,7 @@ class PreferencesViewModel: ObservableObject {
         geInitPreferences()
     }
     
-    func getPreferences() -> PreferencesModel {
+    func getPreferences() async -> PreferencesModel {
 //        do {
 //            try await getFromLLM()
 //        } catch {
@@ -54,7 +54,7 @@ class PreferencesViewModel: ObservableObject {
             apiKey: "AIzaSyBRvxF-gmGvFcCpEqGm1xaaC8x3DAJtSBU"
           )
 
-        let prompt = "Return list of 10 interview questions for a swe role. Give it in the format of an array of strings."
+        let prompt = "Return list of 10 interview questions for a swe role. Give it in the json format of an array of strings and key as questions for the array."
         let response = try await generativeModel.generateContent(prompt)
         if let text = response.text {
           print(text)
