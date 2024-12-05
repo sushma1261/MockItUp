@@ -13,17 +13,19 @@ class PreferencesViewModel: ObservableObject {
     @Published var level: String = ""
     @Published var preferenceModal: PreferencesModel = PreferencesModel()
     let JOB_PREFERENCES: String = "job_preferences"
+    @Published var questionViewModel: QuestionViewModel
+    var generationConfig: GenerationConfig = GenerationConfig(responseMIMEType: "application/json")
+    init(questionViewModel: QuestionViewModel) {
+        self.questionViewModel = questionViewModel
+        geInitPreferences()
+    }
     
     init() {
+        self.questionViewModel = QuestionViewModel()
         geInitPreferences()
     }
     
     func getPreferences() async -> PreferencesModel {
-//        do {
-//            try await getFromLLM()
-//        } catch {
-//            print(error)
-//        }
         return preferenceModal
     }
     
@@ -45,19 +47,58 @@ class PreferencesViewModel: ObservableObject {
     }
     
     func getFromLLM() async throws {
-        let generativeModel =
-          GenerativeModel(
-            // Specify a Gemini model appropriate for your use case
-            name: "gemini-1.5-flash",
-            // Access your API key from your on-demand resource .plist file (see "Set up your API key"
-            // above)
-            apiKey: "AIzaSyBRvxF-gmGvFcCpEqGm1xaaC8x3DAJtSBU"
-          )
-
-        let prompt = "Return list of 10 interview questions for a swe role. Give it in the json format of an array of strings and key as questions for the array."
-        let response = try await generativeModel.generateContent(prompt)
-        if let text = response.text {
-          print(text)
+        //        let generativeModel =
+        //          GenerativeModel(
+        //            // Specify a Gemini model appropriate for your use case
+        //            name: "gemini-1.5-flash",
+        //            // Access your API key from your on-demand resource .plist file (see "Set up your API key"
+        //            // above)
+        //            apiKey: "AIzaSyBRvxF-gmGvFcCpEqGm1xaaC8x3DAJtSBU"
+        //          )
+        //
+        //        let prompt = "Return list of 10 interview questions for a swe role. Give it in the json format of an array of strings and key as questions for the array."
+        //        let response = try await generativeModel.generateContent(prompt)
+        //        if let text = response.text {
+        //          print(text)
+        ////            questionModel.
+        //
+        //}
+        if let secretKey = Bundle.main.object(forInfoDictionaryKey: "ApiSecret") as? String {
+            print("Secret Key: \(secretKey)")
+            let generativeModel =
+              GenerativeModel(
+                // Specify a Gemini model appropriate for your use case
+                name: "gemini-1.5-flash",
+                // Access your API key from your on-demand resource .plist file (see "Set up your API key"
+                // above)
+                apiKey: secretKey,
+                generationConfig: generationConfig
+              )
+            let prompt = "Return list of 10 interview questions for a swe role. Give it in the json format of an array of strings and key as questions for the array. Schema: {questions: [str]"
+            let response = try await generativeModel.generateContent(prompt)
+            if let text = response.text {
+                print("Original Text: \(text)")
+                // Convert text to Data
+                if let jsonData = text.data(using: .utf8) {
+                    do {
+                        // Convert Data to JSON Object (Dictionary or Array)
+                        if let jsonObject = try JSONSerialization.jsonObject(with: jsonData, options: []) as? [String: Any] {
+                            print("JSON Object: \(jsonObject)")
+                            print(jsonObject.keys)
+                            print(jsonObject.values)
+                            if let q = jsonObject["questions"] as? [String] {
+                                questionViewModel.setQuestions(questions: q)
+                            }
+                        } else {
+                            print("Failed to convert text to JSON Dictionary.")
+                        }
+                    } catch {
+                        print("Error converting text to JSON: \(error.localizedDescription)")
+                    }
+                } else {
+                    print("Failed to convert text to Data.")
+                }
+            }
         }
 
     }

@@ -14,60 +14,53 @@ class FeedbackViewModel: ObservableObject {
     
     @Published var feedback: String = "Feedback: "
     @Published var references: String = "References: "
-    
+//    var generationConfig = {
+//        "response_mime_type": "application/json",
+//    }
+    var generationConfig: GenerationConfig = GenerationConfig(responseMIMEType: "application/json")
     func getFeedbackFromLLM(transcript: String, question: String) async throws {
         
         if(transcript != "") {
             if let secretKey = Bundle.main.object(forInfoDictionaryKey: "ApiSecret") as? String {
                 print("Secret Key: \(secretKey)")
+                let generativeModel =
+                  GenerativeModel(
+                    // Specify a Gemini model appropriate for your use case
+                    name: "gemini-1.5-flash",
+                    // Access your API key from your on-demand resource .plist file (see "Set up your API key"
+                    // above)
+                    apiKey: secretKey,
+                    generationConfig: generationConfig
+                  )
+                let prompt = "From the given question " + question + " and the transcript " + transcript + " please give the feedback on this based on question that is asked for that interview also provide references for practice." + "Give the response as schema: {\"feedback:\": str, \"reference:\": str }"
+                let response = try await generativeModel.generateContent(prompt)
+                if let text = response.text {
+                    print("Original Text: \(text)")
+
+                    // Convert text to Data
+                    if let jsonData = text.data(using: .utf8) {
+                        do {
+                            // Convert Data to JSON Object (Dictionary or Array)
+                            if let jsonObject = try JSONSerialization.jsonObject(with: jsonData, options: []) as? [String: Any] {
+                                print("JSON Object: \(jsonObject)")
+                                print(jsonObject.keys)
+                                print(jsonObject.values)
+                                references = jsonObject["reference"] as? String ?? "Couldn't find any references"
+                                feedback = jsonObject["feedback"] as? String ?? "Couldn't find any feedback"
+                            } else {
+                                print("Failed to convert text to JSON Dictionary.")
+                            }
+                        } catch {
+                            print("Error converting text to JSON: \(error.localizedDescription)")
+                        }
+                    } else {
+                        print("Failed to convert text to Data.")
+                    }
+                }
             }
-//            let generativeModel =
-//              GenerativeModel(
-//                // Specify a Gemini model appropriate for your use case
-//                name: "gemini-1.5-flash",
-//                // Access your API key from your on-demand resource .plist file (see "Set up your API key"
-//                // above)
-//                apiKey: "AIzaSyBRvxF-gmGvFcCpEqGm1xaaC8x3DAJtSBU"
-//              )
-//            let prompt = "From the given question " + question + " and the transcript " + transcript + " please give the feedback on this based on question that is asked for that interview also provide references for practice." + "Give the response as json with 2 keys: feedback and references."
-//            let response = try await generativeModel.generateContent(prompt)
-//            let response = "```json
-//            {
-//              "feedback": "This is a strong response to the interview question. It demonstrates a good understanding of current web development trends and a proactive approach to continuous learning.  Here are some minor suggestions for improvement:\n\n* **Specificity:** While the trends mentioned are relevant, adding a bit more detail to each would make the answer even stronger. For example, instead of just saying \"micro frontends for scalable architecture,\" you could mention a specific benefit or challenge related to micro frontends (e.g., \"the ability to independently deploy and update individual components of a large application, which reduces risk and improves development velocity\").  Similarly, for WebAssembly, you could mention a specific application where you've seen it used effectively or a particular advantage it offers over traditional JavaScript.\n\n* **Connection to Personal Experience:**  Briefly mentioning a personal project or experience related to one of the trends would add further weight to your answer and showcase practical application of your knowledge.  For example, \"I recently experimented with WebAssembly in a personal project to improve the performance of a computationally intensive task, and I was impressed by the results.\" \n\n* **Future Outlook:**  Adding a brief statement about your interest in exploring future trends or specific areas for continued learning would demonstrate a growth mindset and forward-thinking approach. For example, \"I'm also keeping a close eye on the development of WebXR and its potential for immersive user experiences.\"\n\nOverall, the answer is well-structured and highlights your commitment to professional development.  The inclusion of specific learning platforms (Udemy, LinkedIn Learning, Kaggle) adds credibility and shows your initiative.",
-//              "references": {
-//                "Micro Frontends": [
-//                  "https://martinfowler.com/articles/micro-frontends.html",
-//                  "https://www.smashingmagazine.com/2021/07/micro-frontends-architecture/"
-//                ],
-//                "WebAssembly": [
-//                  "https://webassembly.org/",
-//                  "https://developer.mozilla.org/en-US/docs/WebAssembly"
-//                ],
-//                "AI-Driven Interfaces": [
-//                  "https://www.nngroup.com/articles/ai-ux-design/",
-//                  "https://uxdesign.cc/designing-with-ai-a-guide-for-ux-designers-d55f063f1e66"
-//                ],
-//                "Serverless Architectures": [
-//                  "https://aws.amazon.com/serverless/",
-//                  "https://cloud.google.com/serverless"
-//                ],
-//                "Learning Platforms": [
-//                  "https://www.udemy.com/",
-//                  "https://www.linkedin.com/learning/",
-//                  "https://www.kaggle.com/"
-//                ],
-//                "Open Source Projects": [
-//                  "https://github.com/",
-//                  "https://gitlab.com/"
-//                ]
-//              }
-//            }
-//            ```"
-//            if let text = response.text {
-//              print("Response" + text)
-//            }
-                feedback = feedback + "Test"
-                references = references + "Test"
+//            try? await Task.sleep(nanoseconds: 10 * 1_000_000_000)
+//                feedback = "This is a strong response that directly addresses the prompt's two parts.  The answer clearly highlights several key current trends in web development (micro frontends, WebAssembly, AI-driven interfaces, serverless architectures), showcasing a good understanding of the field. Mentioning specific examples adds weight to the response. The second part about keeping skills up-to-date is equally impressive, detailing concrete actions like following blogs, contributing to open-source, participating in communities, personal projects, and using educational platforms. This demonstrates a proactive and continuous learning approach.  To make it even better, you could briefly elaborate on *why* these trends are interesting to you, connecting them to your career aspirations or personal interests. For example, instead of just stating 'AI-driven interfaces,' you could mention a specific application of AI that excites you within that context (e.g., personalized recommendations, AI-powered chatbots).\nThis is a strong response that directly addresses the prompt's two parts.  The answer clearly highlights several key current trends in web development (micro frontends, WebAssembly, AI-driven interfaces, serverless architectures), showcasing a good understanding of the field. Mentioning specific examples adds weight to the response. The second part about keeping skills up-to-date is equally impressive, detailing concrete actions like following blogs, contributing to open-source, participating in communities, personal projects, and using educational platforms. This demonstrates a proactive and continuous learning approach.  To make it even better, you could briefly elaborate on *why* these trends are interesting to you, connecting them to your career aspirations or personal interests. For example, instead of just stating 'AI-driven interfaces,' you could mention a specific application of AI that excites you within that context (e.g., personalized recommendations, AI-powered chatbots).\nThis is a strong response that directly addresses the prompt's two parts.  The answer clearly highlights several key current trends in web development (micro frontends, WebAssembly, AI-driven interfaces, serverless architectures), showcasing a good understanding of the field. Mentioning specific examples adds weight to the response. The second part about keeping skills up-to-date is equally impressive, detailing concrete actions like following blogs, contributing to open-source, participating in communities, personal projects, and using educational platforms. This demonstrates a proactive and continuous learning approach.  To make it even better, you could briefly elaborate on *why* these trends are interesting to you, connecting them to your career aspirations or personal interests. For example, instead of just stating 'AI-driven interfaces,' you could mention a specific application of AI that excites you within that context (e.g., personalized recommendations, AI-powered chatbots)."
+//                references = "To practice this type of answer, try researching current web development trends from reputable sources like: \n * **Blogs:**  LogRocket Blog, CSS-Tricks, Smashing Magazine, A List Apart \n * **Newsletters:** Web Dev Digest, JavaScript Weekly \n * **Industry Reports:**  State of JavaScript survey, Stack Overflow Developer Survey \n \n Practice answering the question using different combinations of the trends mentioned above and adding your personal touch to explain your interest.  Focus on conveying your passion and continuous learning attitude. You can also practice with mock interviews using platforms like Pramp or interviewing.io.\n\n\nTo practice this type of answer, try researching current web development trends from reputable sources like: \n * **Blogs:**  LogRocket Blog, CSS-Tricks, Smashing Magazine, A List Apart \n * **Newsletters:** Web Dev Digest, JavaScript Weekly \n * **Industry Reports:**  State of JavaScript survey, Stack Overflow Developer Survey \n \n Practice answering the question using different combinations of the trends mentioned above and adding your personal touch to explain your interest.  Focus on conveying your passion and continuous learning attitude. You can also practice with mock interviews using platforms like Pramp or interviewing.io."
         }
         else {
 //            Task { @MainActor in

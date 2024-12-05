@@ -12,6 +12,8 @@ struct MainView: View {
 //    @StateObject var preferencesViewModel: PreferencesViewModel = PreferencesViewModel()
 //    @StateObject private var store = ScrumStore()
 //    @State private var errorWrapper: ErrorWrapper?
+    @ObservedObject var questionViewModel: QuestionViewModel = QuestionViewModel()
+//    @ObservedObject var preference: PreferencesViewModel = PreferencesViewModel(questionViewModel: questionViewModel)
     @Binding var audios: [QuestionModel]
     let saveAction: ()->Void
     @Environment(\.scenePhase) private var scenePhase
@@ -19,7 +21,7 @@ struct MainView: View {
     var body: some View {
         TabView(selection: $selection) {
             NavigationStack() {
-                HomeView()
+                HomeView(questionsList: questionViewModel.getQuestion())
             }
             .tabItem {
                 Text("Home")
@@ -29,7 +31,7 @@ struct MainView: View {
             .tag(0)
             
             NavigationStack() {
-                PreferrencesView()
+                PreferrencesView(questionViewModel: questionViewModel)
                     .navigationTitle("Preferences")
             }
             .tabItem {

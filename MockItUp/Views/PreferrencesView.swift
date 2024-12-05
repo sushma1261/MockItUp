@@ -15,7 +15,7 @@ struct PreferrencesView: View {
     @State var jobDescription: String = ""
     @ObservedObject var preference: PreferencesViewModel = PreferencesViewModel()
     @State private var isRunning = false
-
+    @ObservedObject var questionViewModel: QuestionViewModel = QuestionViewModel()
     
     var body: some View {
         NavigationStack
@@ -28,32 +28,54 @@ struct PreferrencesView: View {
                 CustomTextField(title: "Years of Experience", variable: $preference.preferenceModal.yoe, styleType: "test")
                 CustomTextField(title: "Company Name", variable: $preference.preferenceModal.companyName, styleType: "test")
                 CustomTextField(title: "Job Description", variable: $preference.preferenceModal.jobDescription, styleType: "test")
-                NavigationLink {
-                    HomeView()
-                } label: {
+
+                NavigationLink(destination: HomeView(questionsList: questionViewModel.getQuestion())) {
                     Text("Submit")
-                        .foregroundColor(.white)
                         .font(.headline)
+                        .foregroundColor(.white)
                         .frame(height: 55)
                         .frame(maxWidth: .infinity)
                         .background(Color.accentColor)
                         .cornerRadius(10)
                         .padding(20)
                 }
-                Button {
-                    isRunning = true
+                .onDisappear() {
                     Task {
                         do {
                             try await preference.getFromLLM()
                         } catch {
                             print(error)
                         }
-                        isRunning = false
                     }
-                } label: {
-                   Text("label")
                 }
-                .disabled(isRunning)
+                
+                
+//                onDisappear() {
+//                    isRunning = true
+//                    Task {
+//                        do {
+//                            try await preference.getFromLLM()
+//                        } catch {
+//                            print(error)
+//                        }
+//                        isRunning = false
+//                    }
+//                }
+//                .disabled(isRunning)
+//                Button {
+//                    isRunning = true
+//                    Task {
+//                        do {
+//                            try await preference.getFromLLM()
+//                        } catch {
+//                            print(error)
+//                        }
+//                        isRunning = false
+//                    }
+//                } label: {
+//                   Text("label")
+//                }
+//                .disabled(isRunning)
                 /*.navigationDestination(isPresented: $isPresented, destination: HomeView) */
                 Spacer()
             }

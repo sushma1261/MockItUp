@@ -28,7 +28,17 @@ class QuestionViewModel: ObservableObject {
         questionsList = list.map { QuestionModel(title: $0) }
     }
     
+    func setQuestions(questions: [String]) {
+        questions.forEach { questionsList.append(QuestionModel(title: $0)) }
+    }
+    
     func getQuestion() -> [QuestionModel] {
         return questionsList
     }
+    
+}
+
+
+extension QuestionViewModel {
+    static let sampleQuestionsList = list.map { QuestionModel(title: $0) }
 }

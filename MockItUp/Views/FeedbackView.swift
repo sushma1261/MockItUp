@@ -16,21 +16,27 @@ struct FeedbackView: View {
             VStack {
                 VStack {
                     Text("Transcript: ")
-                    Text(speechRecognizer.transcript)
-                    Spacer()
-                        
+                    ScrollView {
+                        Text(speechRecognizer.transcript)
+                    }                        
                 }
                 VStack {
                     Text("Feedback: ")
-                    Text(feedbackViewModel.feedback)
+                    ScrollView {
+                        Text(feedbackViewModel.feedback)
+                    }
+                    .border(.white)
+                    .padding(8)
+                    .frame(minWidth: 700)
+                    
                     Spacer()
                         
                 }
                 VStack {
                     Text("Practice: ")
-//                    Text("1. TED Talks: Watching TED Talks and analyzing speakers' techniques can offer insights into effective communication, body language, and audience engagement. Try summarizing a talk to practice clarity.")
-//                    Text("2. Practicing with Peers: Engage in structured peer-to-peer feedback, recording yourself if possible to refine delivery and flow.")
-                    Text(feedbackViewModel.references)
+                    ScrollView {
+                        Text(feedbackViewModel.references)
+                    }
                     Spacer()
                 }
                 Spacer()

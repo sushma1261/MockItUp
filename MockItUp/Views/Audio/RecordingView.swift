@@ -12,6 +12,8 @@
 import SwiftUI
 import AVFoundation
 
+//var transcript = "I'm particularly interested in the rise of micro frontends for scalable architecture, the use of WebAssembly to improve performance, and the growing adoption of AI-driven interfaces that enhance user experience through personalization. I’m also excited about serverless architectures for their scalability and cost-efficiency. To stay up-to-date, I actively follow industry-leading blogs, contribute to open-source projects, and participate in developer communities. I also explore new technologies through personal projects and leverage platforms like Udemy, LinkedIn Learning, and Kaggle to sharpen my skills, ensuring I’m always aligned with evolving industry standards."
+
 struct RecordingView: View {
     @Binding var questionModel: QuestionModel
 //    @StateObject var scrumTimer = ScrumTimer()
@@ -33,7 +35,7 @@ struct RecordingView: View {
                 .onDisappear() {
                     Task {
                         do {
-                            try await feedbackViewModel.getFeedbackFromLLM(transcript: "I'm particularly interested in the rise of micro frontends for scalable architecture, the use of WebAssembly to improve performance, and the growing adoption of AI-driven interfaces that enhance user experience through personalization. I’m also excited about serverless architectures for their scalability and cost-efficiency. To stay up-to-date, I actively follow industry-leading blogs, contribute to open-source projects, and participate in developer communities. I also explore new technologies through personal projects and leverage platforms like Udemy, LinkedIn Learning, and Kaggle to sharpen my skills, ensuring I’m always aligned with evolving industry standards.", question: questionModel.question)
+                            try await feedbackViewModel.getFeedbackFromLLM(transcript: speechRecognizer.transcript, question: questionModel.question)
                         } catch {
                             print(error)
                         }
