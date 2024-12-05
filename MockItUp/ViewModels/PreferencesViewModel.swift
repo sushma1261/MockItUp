@@ -47,22 +47,6 @@ class PreferencesViewModel: ObservableObject {
     }
     
     func getFromLLM() async throws {
-        //        let generativeModel =
-        //          GenerativeModel(
-        //            // Specify a Gemini model appropriate for your use case
-        //            name: "gemini-1.5-flash",
-        //            // Access your API key from your on-demand resource .plist file (see "Set up your API key"
-        //            // above)
-        //            apiKey: "AIzaSyBRvxF-gmGvFcCpEqGm1xaaC8x3DAJtSBU"
-        //          )
-        //
-        //        let prompt = "Return list of 10 interview questions for a swe role. Give it in the json format of an array of strings and key as questions for the array."
-        //        let response = try await generativeModel.generateContent(prompt)
-        //        if let text = response.text {
-        //          print(text)
-        ////            questionModel.
-        //
-        //}
         if let secretKey = Bundle.main.object(forInfoDictionaryKey: "ApiSecret") as? String {
             print("Secret Key: \(secretKey)")
             let generativeModel =
