@@ -9,8 +9,8 @@ import Foundation
 import GoogleGenerativeAI
 import SwiftUICore
 
-var list2 = ["Describe a challenging web development project you worked on and how you overcame technical hurdles.",
-"Explain your understanding of RESTful APIs, and provide an example of a well-designed API endpoint you would create for a social media application."]
+var list2 = ["How would you contribute to a team working on a large-scale software project, specifically considering communication and collaboration? ",
+             "What are some of the current trends in web development that you are most interested in? How do you keep your skills up-to-date?"]
 
 
 @MainActor
@@ -58,9 +58,6 @@ class PreferencesViewModel: ObservableObject {
     }
     
     func getFromLLM() async throws {
-//        try await getFromGeminiAPI()
-//        try? await Task.sleep(nanoseconds: 5 * 1_000_000_000)
-//        text = "Changed after 5 seconds"
         questionViewModel.setQuestions(questions: list2)
         print("QuestionsList:: ", questionViewModel.questionsList)
 
