@@ -25,14 +25,16 @@ class QuestionViewModel: ObservableObject {
     @Published var questionsList: [QuestionModel] = []
     
     init() {
-        questionsList = list.map { QuestionModel(title: $0) }
+        questionsList = []
     }
     
     func setQuestions(questions: [String]) {
+        questionsList = []
         questions.forEach { questionsList.append(QuestionModel(title: $0)) }
     }
     
     func getQuestion() -> [QuestionModel] {
+        print("Get Questions", questionsList)
         return questionsList
     }
     

@@ -13,14 +13,14 @@ struct PreferrencesView: View {
     @State var yoe: String = ""
     @State var companyName: String = ""
     @State var jobDescription: String = ""
-    @ObservedObject var preference: PreferencesViewModel = PreferencesViewModel()
+    @StateObject var preference: PreferencesViewModel
     @State private var isRunning = false
-    @ObservedObject var questionViewModel: QuestionViewModel = QuestionViewModel()
-    
     var body: some View {
+        
         NavigationStack
         {
             VStack {
+                Text("Select the preferences")
                 HStack {
                     CustomTextField(title: "Job Type", variable: $preference.preferenceModal.jobType, styleType: "test")
                     CustomTextField(title: "Level", variable: $preference.preferenceModal.level, styleType: "test")
@@ -28,8 +28,8 @@ struct PreferrencesView: View {
                 CustomTextField(title: "Years of Experience", variable: $preference.preferenceModal.yoe, styleType: "test")
                 CustomTextField(title: "Company Name", variable: $preference.preferenceModal.companyName, styleType: "test")
                 CustomTextField(title: "Job Description", variable: $preference.preferenceModal.jobDescription, styleType: "test")
-
-                NavigationLink(destination: HomeView(questionsList: questionViewModel.getQuestion())) {
+//                Text(preference.text)
+                NavigationLink(destination: HomeView(questionsList: $preference.questionViewModel.questionsList, changeText: $preference.text)) {
                     Text("Submit")
                         .font(.headline)
                         .foregroundColor(.white)
@@ -48,35 +48,6 @@ struct PreferrencesView: View {
                         }
                     }
                 }
-                
-                
-//                onDisappear() {
-//                    isRunning = true
-//                    Task {
-//                        do {
-//                            try await preference.getFromLLM()
-//                        } catch {
-//                            print(error)
-//                        }
-//                        isRunning = false
-//                    }
-//                }
-//                .disabled(isRunning)
-//                Button {
-//                    isRunning = true
-//                    Task {
-//                        do {
-//                            try await preference.getFromLLM()
-//                        } catch {
-//                            print(error)
-//                        }
-//                        isRunning = false
-//                    }
-//                } label: {
-//                   Text("label")
-//                }
-//                .disabled(isRunning)
-                /*.navigationDestination(isPresented: $isPresented, destination: HomeView) */
                 Spacer()
             }
         }
@@ -88,6 +59,6 @@ struct PreferrencesView: View {
 
 #Preview {
     NavigationStack {
-        PreferrencesView()
+        PreferrencesView(preference: PreferencesViewModel())
     }
 }

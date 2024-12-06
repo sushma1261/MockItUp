@@ -12,97 +12,99 @@ struct MainView: View {
 //    @StateObject var preferencesViewModel: PreferencesViewModel = PreferencesViewModel()
 //    @StateObject private var store = ScrumStore()
 //    @State private var errorWrapper: ErrorWrapper?
-    @ObservedObject var questionViewModel: QuestionViewModel = QuestionViewModel()
-//    @ObservedObject var preference: PreferencesViewModel = PreferencesViewModel(questionViewModel: questionViewModel)
+    @ObservedObject var preference: PreferencesViewModel = PreferencesViewModel()
+
     @Binding var audios: [QuestionModel]
     let saveAction: ()->Void
     @Environment(\.scenePhase) private var scenePhase
 //    print(audios)
     var body: some View {
-        TabView(selection: $selection) {
-            NavigationStack() {
-                HomeView(questionsList: questionViewModel.getQuestion())
-            }
-            .tabItem {
-                Text("Home")
-                Image(systemName: "house.fill")
-                    .renderingMode(.template)
-            }
-            .tag(0)
-            
-            NavigationStack() {
-                PreferrencesView(questionViewModel: questionViewModel)
-                    .navigationTitle("Preferences")
-            }
-            .tabItem {
-                Text("Preferences")
-                Image(systemName: "gearshape")
-                    .renderingMode(.template)
-            }
-            .tag(1)
-            
+        PreferrencesView(preference: preference)
+//        SignInView()
+//        TabView(selection: $selection) {
 //            NavigationStack() {
-//                FeedbackView()
-//                    .navigationTitle("Feedback")
+//                HomeView(questionsList: $preference.questionViewModel.questionsList, changeText: $preference.text)
 //            }
 //            .tabItem {
-//                Text("Feedback")
-//                Image(systemName: "list.bullet.clipboard")
+//                Text("Home")
+//                Image(systemName: "house.fill")
 //                    .renderingMode(.template)
 //            }
-//            .tag(2)
+//            .tag(0)
 //            
 //            NavigationStack() {
-//                ContentView()
-////                Text("My Account")
-//                    .navigationTitle("My Account")
-//
+//                PreferrencesView(preference: preference)
+//                    .navigationTitle("Preferences")
 //            }
 //            .tabItem {
-//                Text("My Account")
-//                Image(systemName: "person.fill")
-//
+//                Text("Preferences")
+//                Image(systemName: "gearshape")
+//                    .renderingMode(.template)
 //            }
-//            .tag(3)
-            
-//            NavigationStack() {
-//                ScrumsView(scrums: $store.scrums) {
-//                    Task {
-//                        do {
-//                            try await store.save(scrums: store.scrums)
-//                        } catch {
-//                            errorWrapper = ErrorWrapper(error: error,
-//                                                        guidance: "Try again later.")
-//                        }
-//                    }
-//                }
-//                .task {
-//                    do {
-//                        try await store.load()
-//                    } catch {
-//                        errorWrapper = ErrorWrapper(error: error,
-//                                                    guidance: "Scrumdinger will load sample data and continue.")
-//                    }
-//                }
-//                .sheet(item: $errorWrapper) {
-//                    store.scrums = DailyScrum.sampleData
-//                } content: { wrapper in
-//                    ErrorView(errorWrapper: wrapper)
-//                }
-//                .navigationTitle("Scrums")
-//
-//                }
-//                .tabItem {
-//                    Text("Scrums")
-//                    Image(systemName: "person.fill")
-//
-//                }
-//                .tag(3)
-        }
-        .onChange(of: scenePhase) { phase in
-            print("Onchange called", phase)
-            saveAction()
-        }
+//            .tag(1)
+//            
+////            NavigationStack() {
+////                FeedbackView()
+////                    .navigationTitle("Feedback")
+////            }
+////            .tabItem {
+////                Text("Feedback")
+////                Image(systemName: "list.bullet.clipboard")
+////                    .renderingMode(.template)
+////            }
+////            .tag(2)
+////            
+////            NavigationStack() {
+////                ContentView()
+//////                Text("My Account")
+////                    .navigationTitle("My Account")
+////
+////            }
+////            .tabItem {
+////                Text("My Account")
+////                Image(systemName: "person.fill")
+////
+////            }
+////            .tag(3)
+//            
+////            NavigationStack() {
+////                ScrumsView(scrums: $store.scrums) {
+////                    Task {
+////                        do {
+////                            try await store.save(scrums: store.scrums)
+////                        } catch {
+////                            errorWrapper = ErrorWrapper(error: error,
+////                                                        guidance: "Try again later.")
+////                        }
+////                    }
+////                }
+////                .task {
+////                    do {
+////                        try await store.load()
+////                    } catch {
+////                        errorWrapper = ErrorWrapper(error: error,
+////                                                    guidance: "Scrumdinger will load sample data and continue.")
+////                    }
+////                }
+////                .sheet(item: $errorWrapper) {
+////                    store.scrums = DailyScrum.sampleData
+////                } content: { wrapper in
+////                    ErrorView(errorWrapper: wrapper)
+////                }
+////                .navigationTitle("Scrums")
+////
+////                }
+////                .tabItem {
+////                    Text("Scrums")
+////                    Image(systemName: "person.fill")
+////
+////                }
+////                .tag(3)
+//        }
+//        .onChange(of: scenePhase) { phase in
+//            print("Onchange called", phase)
+//            saveAction()
+//        }
 //        .environmentObject(preferencesViewModel)
     }
 }

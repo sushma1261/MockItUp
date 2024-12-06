@@ -16,7 +16,6 @@ import AVFoundation
 
 struct RecordingView: View {
     @Binding var questionModel: QuestionModel
-//    @StateObject var scrumTimer = ScrumTimer()
     @StateObject var speechRecognizer = SpeechRecognizer()
     @State private var isRecording = false
     @StateObject var feedbackViewModel: FeedbackViewModel = FeedbackViewModel()
@@ -27,6 +26,7 @@ struct RecordingView: View {
             VStack {
                 Text("Question")
                 Text(questionModel.question)
+                Spacer()
                 NavigationLink(destination: FeedbackView(speechRecognizer: speechRecognizer, feedbackViewModel: feedbackViewModel)) {
                     Label("Stop Recording", systemImage: "timer")
                         .font(.headline)
@@ -36,14 +36,17 @@ struct RecordingView: View {
                     Task {
                         do {
                             try await feedbackViewModel.getFeedbackFromLLM(transcript: speechRecognizer.transcript, question: questionModel.question)
-                        } catch {
-                            print(error)
-                        }
+                            } catch {
+                                print(error)
+                            }
                         }
                     endScrum()
                     print("test", speechRecognizer.transcript)
                 }
-                
+                Spacer()
+//                Text("Transcript::")
+//                Text(speechRecognizer.transcript)
+//                Spacer()
             }
         }
         .padding()

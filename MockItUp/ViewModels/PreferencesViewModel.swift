@@ -7,13 +7,24 @@
 
 import Foundation
 import GoogleGenerativeAI
+import SwiftUICore
 
+var list2 = ["Describe a challenging web development project you worked on and how you overcame technical hurdles.",
+"Explain your understanding of RESTful APIs, and provide an example of a well-designed API endpoint you would create for a social media application."]
+
+
+@MainActor
 class PreferencesViewModel: ObservableObject {
     
     @Published var level: String = ""
     @Published var preferenceModal: PreferencesModel = PreferencesModel()
     let JOB_PREFERENCES: String = "job_preferences"
     @Published var questionViewModel: QuestionViewModel
+    
+    
+    
+    
+    @Published var text: String = "Hello"
     var generationConfig: GenerationConfig = GenerationConfig(responseMIMEType: "application/json")
     init(questionViewModel: QuestionViewModel) {
         self.questionViewModel = questionViewModel
@@ -28,7 +39,7 @@ class PreferencesViewModel: ObservableObject {
     func getPreferences() async -> PreferencesModel {
         return preferenceModal
     }
-    
+
     func geInitPreferences() {
         if let data = UserDefaults.standard.data(forKey: JOB_PREFERENCES) {
             if let decoded = try? JSONDecoder().decode(PreferencesModel.self, from: data) {
@@ -38,7 +49,7 @@ class PreferencesViewModel: ObservableObject {
         }
     
     }
-    
+
     func savePreferences() {
         if let encoded = try? JSONEncoder().encode(preferenceModal) {
             UserDefaults.standard.set(encoded, forKey: JOB_PREFERENCES)
@@ -47,14 +58,20 @@ class PreferencesViewModel: ObservableObject {
     }
     
     func getFromLLM() async throws {
+//        try await getFromGeminiAPI()
+        try? await Task.sleep(nanoseconds: 5 * 1_000_000_000)
+//        text = "Changed after 5 seconds"
+        questionViewModel.setQuestions(questions: list2)
+        print("QuestionsList:: ", questionViewModel.questionsList)
+
+    }
+    
+    func getFromGeminiAPI() async throws {
         if let secretKey = Bundle.main.object(forInfoDictionaryKey: "ApiSecret") as? String {
             print("Secret Key: \(secretKey)")
             let generativeModel =
               GenerativeModel(
-                // Specify a Gemini model appropriate for your use case
                 name: "gemini-1.5-flash",
-                // Access your API key from your on-demand resource .plist file (see "Set up your API key"
-                // above)
                 apiKey: secretKey,
                 generationConfig: generationConfig
               )
@@ -65,7 +82,6 @@ class PreferencesViewModel: ObservableObject {
                 // Convert text to Data
                 if let jsonData = text.data(using: .utf8) {
                     do {
-                        // Convert Data to JSON Object (Dictionary or Array)
                         if let jsonObject = try JSONSerialization.jsonObject(with: jsonData, options: []) as? [String: Any] {
                             print("JSON Object: \(jsonObject)")
                             print(jsonObject.keys)
@@ -84,7 +100,6 @@ class PreferencesViewModel: ObservableObject {
                 }
             }
         }
-
     }
     
 }

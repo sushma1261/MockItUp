@@ -10,49 +10,51 @@ import SwiftUI
 struct SignInView: View {
     @State var username = ""
     @State var password = ""
+    @Binding var audios: [QuestionModel]
+    @ObservedObject var preference: PreferencesViewModel = PreferencesViewModel()
+    let saveAction: ()->Void
+//    @State var error = ""
     var body: some View {
         
-        VStack {
+        NavigationStack {
+            Text("MockItUp")
+                .font(.system(size: 28))
+                .bold()
+            Spacer()
             
-            TextField("Username", text: $username)
-                .textInputAutocapitalization(.never)
-                .disableAutocorrection(true)
-                .padding(.horizontal)
-                .frame(height: 55)
-                .background(Color(UIColor.secondarySystemBackground))
-                .cornerRadius(10)
-            
-            SecureField("Password", text: $password)
-                .textInputAutocapitalization(.never)
-                .disableAutocorrection(true)
-                .padding(.horizontal)
-                .frame(height: 55)
-                .background(Color(UIColor.secondarySystemBackground))
-                .cornerRadius(10)
-            
-            Button {
-                // QuestionsListView.self
-            } label: {
-                Text("Submit")
-                    .foregroundColor(.white)
-                    .font(.headline)
+            VStack {
+                Text("Sign In")
+                TextField("Username", text: $username)
+                    .textInputAutocapitalization(.never)
+                    .disableAutocorrection(true)
+                    .padding(.horizontal)
                     .frame(height: 55)
-                    .frame(maxWidth: .infinity)
-                    .background(Color.accentColor)
+                    .background(Color(UIColor.secondarySystemBackground))
                     .cornerRadius(10)
-                    .padding(20)
+                
+                SecureField("Password", text: $password)
+                    .textInputAutocapitalization(.never)
+                    .disableAutocorrection(true)
+                    .padding(.horizontal)
+                    .frame(height: 55)
+                    .background(Color(UIColor.secondarySystemBackground))
+                    .cornerRadius(10)
+    //            Text(error)
+                NavigationLink(destination: MainView(audios: $audios, saveAction: saveAction)) {
+                    Text("Submit")
+                }
                 
             }
-            
+            Spacer()
         }
         .padding(16)
-        
+        Spacer()
     }
 }
 
 
 #Preview {
     NavigationStack {
-        SignInView()
+        SignInView( audios: .constant(QuestionModel.sampleData), saveAction: {})
     }
 }

@@ -14,35 +14,36 @@ struct FeedbackView: View {
     var body: some View {
         NavigationStack {
             VStack {
-                VStack {
-                    Text("Transcript: ")
-                    ScrollView {
-                        Text(speechRecognizer.transcript)
-                    }                        
-                }
+//                VStack {
+//                    Text("Transcript: ")
+//                    ScrollView {
+//                        Text(speechRecognizer.transcript)
+//                    }                        
+//                }
                 VStack {
                     Text("Feedback: ")
-                    ScrollView {
-                        Text(feedbackViewModel.feedback)
+                    NavigationLink(destination: FeedbackViewMore(feedback: feedbackViewModel.feedback)){
+                        ScrollView {
+                            Text(feedbackViewModel.feedback)
+                        }
                     }
-                    .border(.white)
                     .padding(8)
-                    .frame(minWidth: 700)
-                    
                     Spacer()
                         
                 }
                 VStack {
                     Text("Practice: ")
-                    ScrollView {
-                        Text(feedbackViewModel.references)
+                    NavigationLink(destination: FeedbackViewMore(feedback: feedbackViewModel.references)){
+                        ScrollView {
+                            Text(feedbackViewModel.references)
+                        }
                     }
+                    
                     Spacer()
                 }
                 Spacer()
             }
         }
-        .navigationTitle("Feedback")
         .padding(16)
     }
 }

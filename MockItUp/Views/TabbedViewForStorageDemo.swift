@@ -11,16 +11,16 @@ struct TabbedViewForStorageDemo: View {
     @State var selection: String = ""
     var body: some View {
         TabView(selection: $selection) {
-            NavigationStack() {
-                PreferrencesView()
-                    .navigationTitle("Preferences")
-            }
-            .tabItem {
-                Text("Preferences")
-                Image(systemName: "gearshape")
-                    .renderingMode(.template)
-            }
-            .tag(0)
+//            NavigationStack() {
+//                PreferrencesView()
+//                    .navigationTitle("Preferences")
+//            }
+//            .tabItem {
+//                Text("Preferences")
+//                Image(systemName: "gearshape")
+//                    .renderingMode(.template)
+//            }
+//            .tag(0)
             
             NavigationStack() {
                 ImageDemoView()

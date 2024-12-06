@@ -12,9 +12,11 @@ struct HomeView: View {
     
     @State var isPresented = false
     
-    @State var questionsList: [QuestionModel]
-    
+    @Binding var questionsList: [QuestionModel]
+    @Binding var changeText: String
     var body: some View {
+        Spacer()
+//        Text(changeText)
         NavigationStack {
             List {
                 ForEach(questionsList) { ques in
@@ -27,9 +29,16 @@ struct HomeView: View {
             }
         }
         .navigationTitle("Questions List")
+        .onAppear() {
+//            self.questionsList = []
+            print("appear",questionsList)
+        }
+        .onDisappear() {
+            print("disappear", questionsList)
+        }
     }
 }
 
 #Preview {
-    HomeView(questionsList: QuestionViewModel.sampleQuestionsList)
+    HomeView(questionsList: .constant( QuestionViewModel.sampleQuestionsList), changeText: .constant("Test"))
 }
