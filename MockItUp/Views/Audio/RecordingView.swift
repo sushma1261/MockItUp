@@ -27,7 +27,11 @@ struct RecordingView: View {
                 Text("Question")
                 Text(questionModel.question)
                 Spacer()
-                NavigationLink(destination: FeedbackView(speechRecognizer: speechRecognizer, feedbackViewModel: feedbackViewModel)) {
+                VStack {
+                    HistoryFeedbackViews(history: $questionModel.history)
+                    Spacer()
+                }
+                NavigationLink(destination: FeedbackView(feedbackViewModel: feedbackViewModel)) {
                     Label("Stop Recording", systemImage: "timer")
                         .font(.headline)
                         .foregroundColor(.accentColor)
@@ -35,18 +39,19 @@ struct RecordingView: View {
                 .onDisappear() {
                     Task {
                         do {
-                            try await feedbackViewModel.getFeedbackFromLLM(transcript: speechRecognizer.transcript, question: questionModel.question)
+                            let returnedResponse = try await feedbackViewModel.getFeedbackFromLLM(transcript: speechRecognizer.transcript, question: questionModel.question)
+                                if (returnedResponse.success) {
+                                    let newHistory = AudioHistory(questionId: questionModel.id,
+                                                                  transcript: speechRecognizer.transcript, feedback: returnedResponse.feedback, references: returnedResponse.references)
+                                    questionModel.history.insert(newHistory, at: 0)
+                                }
                             } catch {
                                 print(error)
                             }
                         }
                     endScrum()
-                    print("test", speechRecognizer.transcript)
                 }
                 Spacer()
-//                Text("Transcript::")
-//                Text(speechRecognizer.transcript)
-//                Spacer()
             }
         }
         .padding()
@@ -60,27 +65,17 @@ struct RecordingView: View {
     }
     
     private func startScrum() {
-//        scrumTimer.reset(lengthInMinutes: scrum.lengthInMinutes, attendees: scrum.attendees)
-//        scrumTimer.speakerChangedAction = {
-//            player.seek(to: .zero)
-//            player.play()
-//        }
         speechRecognizer.resetTranscript()
         speechRecognizer.startTranscribing()
         print("Speech transcript:::")
         print(speechRecognizer.transcript)
         isRecording = true
-//        scrumTimer.startScrum()
     }
     
     private func endScrum() {
-//        scrumTimer.stopScrum()
         speechRecognizer.stopTranscribing()
         isRecording = false
-        let newHistory = AudioHistory(questionId: questionModel.id,
-                                 transcript: speechRecognizer.transcript)
-        questionModel.history.insert(newHistory, at: 0)
-        print("End scrum", newHistory)
+        print("End scrum")
     }
 }
 

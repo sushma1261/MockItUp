@@ -34,7 +34,6 @@ class QuestionViewModel: ObservableObject {
     }
     
     func getQuestion() -> [QuestionModel] {
-        print("Get Questions", questionsList)
         return questionsList
     }
     

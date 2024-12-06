@@ -8,18 +8,11 @@
 import SwiftUI
 
 struct FeedbackView: View {
-    @State var speechRecognizer: SpeechRecognizer
     @StateObject var feedbackViewModel: FeedbackViewModel
 
     var body: some View {
         NavigationStack {
             VStack {
-//                VStack {
-//                    Text("Transcript: ")
-//                    ScrollView {
-//                        Text(speechRecognizer.transcript)
-//                    }                        
-//                }
                 VStack {
                     Text("Feedback: ")
                     NavigationLink(destination: FeedbackViewMore(feedback: feedbackViewModel.feedback)){
@@ -49,5 +42,5 @@ struct FeedbackView: View {
 }
 
 #Preview {
-    FeedbackView(speechRecognizer: SpeechRecognizer(), feedbackViewModel: FeedbackViewModel())
+    FeedbackView(feedbackViewModel: FeedbackViewModel())
 }

@@ -59,7 +59,7 @@ class PreferencesViewModel: ObservableObject {
     
     func getFromLLM() async throws {
 //        try await getFromGeminiAPI()
-        try? await Task.sleep(nanoseconds: 5 * 1_000_000_000)
+//        try? await Task.sleep(nanoseconds: 5 * 1_000_000_000)
 //        text = "Changed after 5 seconds"
         questionViewModel.setQuestions(questions: list2)
         print("QuestionsList:: ", questionViewModel.questionsList)

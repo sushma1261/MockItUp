@@ -29,13 +29,13 @@ struct HomeView: View {
             }
         }
         .navigationTitle("Questions List")
-        .onAppear() {
-//            self.questionsList = []
-            print("appear",questionsList)
-        }
-        .onDisappear() {
-            print("disappear", questionsList)
-        }
+//        .onAppear() {
+////            self.questionsList = []
+//            print("appear",questionsList)
+//        }
+//        .onDisappear() {
+//            print("disappear", questionsList)
+//        }
     }
 }
 

@@ -18,8 +18,8 @@ class FeedbackViewModel: ObservableObject {
     @Published var references: String = GETTING_REFERENCES
 
     var generationConfig: GenerationConfig = GenerationConfig(responseMIMEType: "application/json")
-    func getFeedbackFromLLM(transcript: String, question: String) async throws {
-        
+    func getFeedbackFromLLM(transcript: String, question: String) async throws -> (references: String, feedback: String, success: Bool) {
+        var success: Bool = false
         if(transcript != "") {
             feedback = GETTING_FEEDBACK
             references = GETTING_REFERENCES
@@ -60,9 +60,10 @@ class FeedbackViewModel: ObservableObject {
 //                    }
 //                }
 //            }
-            try? await Task.sleep(nanoseconds: 10 * 1_000_000_000)
+            try? await Task.sleep(nanoseconds: 3 * 1_000_000_000)
                 feedback = "This is a strong response that directly addresses the prompt's two parts.  The answer clearly highlights several key current trends in web development (micro frontends, WebAssembly, AI-driven interfaces, serverless architectures), showcasing a good understanding of the field. Mentioning specific examples adds weight to the response. The second part about keeping skills up-to-date is equally impressive, detailing concrete actions like following blogs, contributing to open-source, participating in communities, personal projects, and using educational platforms. This demonstrates a proactive and continuous learning approach.  To make it even better, you could briefly elaborate on *why* these trends are interesting to you, connecting them to your career aspirations or personal interests. For example, instead of just stating 'AI-driven interfaces,' you could mention a specific application of AI that excites you within that context (e.g., personalized recommendations, AI-powered chatbots).\nThis is a strong response that directly addresses the prompt's two parts.  The answer clearly highlights several key current trends in web development (micro frontends, WebAssembly, AI-driven interfaces, serverless architectures), showcasing a good understanding of the field. Mentioning specific examples adds weight to the response. The second part about keeping skills up-to-date is equally impressive, detailing concrete actions like following blogs, contributing to open-source, participating in communities, personal projects, and using educational platforms. This demonstrates a proactive and continuous learning approach.  To make it even better, you could briefly elaborate on *why* these trends are interesting to you, connecting them to your career aspirations or personal interests. For example, instead of just stating 'AI-driven interfaces,' you could mention a specific application of AI that excites you within that context (e.g., personalized recommendations, AI-powered chatbots).\nThis is a strong response that directly addresses the prompt's two parts.  The answer clearly highlights several key current trends in web development (micro frontends, WebAssembly, AI-driven interfaces, serverless architectures), showcasing a good understanding of the field. Mentioning specific examples adds weight to the response. The second part about keeping skills up-to-date is equally impressive, detailing concrete actions like following blogs, contributing to open-source, participating in communities, personal projects, and using educational platforms. This demonstrates a proactive and continuous learning approach.  To make it even better, you could briefly elaborate on *why* these trends are interesting to you, connecting them to your career aspirations or personal interests. For example, instead of just stating 'AI-driven interfaces,' you could mention a specific application of AI that excites you within that context (e.g., personalized recommendations, AI-powered chatbots)."
                 references = "To practice this type of answer, try researching current web development trends from reputable sources like: \n * **Blogs:**  LogRocket Blog, CSS-Tricks, Smashing Magazine, A List Apart \n * **Newsletters:** Web Dev Digest, JavaScript Weekly \n * **Industry Reports:**  State of JavaScript survey, Stack Overflow Developer Survey \n \n Practice answering the question using different combinations of the trends mentioned above and adding your personal touch to explain your interest.  Focus on conveying your passion and continuous learning attitude. You can also practice with mock interviews using platforms like Pramp or interviewing.io.\n\n\nTo practice this type of answer, try researching current web development trends from reputable sources like: \n * **Blogs:**  LogRocket Blog, CSS-Tricks, Smashing Magazine, A List Apart \n * **Newsletters:** Web Dev Digest, JavaScript Weekly \n * **Industry Reports:**  State of JavaScript survey, Stack Overflow Developer Survey \n \n Practice answering the question using different combinations of the trends mentioned above and adding your personal touch to explain your interest.  Focus on conveying your passion and continuous learning attitude. You can also practice with mock interviews using platforms like Pramp or interviewing.io."
+            success = true
         }
         else {
 //            Task { @MainActor in
@@ -74,6 +75,7 @@ class FeedbackViewModel: ObservableObject {
             print("Else", feedback, references)
         }
 
+        return (references, feedback, success)
     }
     
 }
