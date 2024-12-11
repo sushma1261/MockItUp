@@ -22,20 +22,11 @@ struct HomeView: View {
                 ForEach(questionsList) { ques in
                     NavigationLink(destination: QuestionPageView(questionModel: ques)) {
                         QuestionsListView(ques: ques)
-                            .safeAreaPadding(8)
                     }
                 }
-//                Spacer()
             }
         }
         .navigationTitle("Questions List")
-//        .onAppear() {
-////            self.questionsList = []
-//            print("appear",questionsList)
-//        }
-//        .onDisappear() {
-//            print("disappear", questionsList)
-//        }
     }
 }
 

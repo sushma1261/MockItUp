@@ -8,8 +8,8 @@
 import SwiftUI
 
 struct SignInView: View {
-    @State var username = ""
-    @State var password = ""
+    @State var username = "sushma"
+    @State var password = "pass"
     @Binding var audios: [QuestionModel]
     @ObservedObject var preference: PreferencesViewModel = PreferencesViewModel()
     let saveAction: ()->Void

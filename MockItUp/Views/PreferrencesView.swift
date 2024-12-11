@@ -42,10 +42,11 @@ struct PreferrencesView: View {
                 .onDisappear() {
                     Task {
                         do {
-                            try await preference.getFromLLM()
-                        } catch {
-                            print(error)
+                            preference.getFromLLM()
                         }
+//                        catch {
+//                            print(error)
+//                        }
                     }
                 }
                 Spacer()

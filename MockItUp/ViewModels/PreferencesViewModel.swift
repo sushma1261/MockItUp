@@ -9,8 +9,7 @@ import Foundation
 import GoogleGenerativeAI
 import SwiftUICore
 
-var list2 = ["How would you contribute to a team working on a large-scale software project, specifically considering communication and collaboration? ",
-             "What are some of the current trends in web development that you are most interested in? How do you keep your skills up-to-date?"]
+var list2 = ["How would you contribute to a team working on a large-scale software project, specifically considering communication and collaboration? ", "What are some of the current trends in web development that you are most interested in? How do you keep your skills up-to-date?"]
 
 
 @MainActor
@@ -57,7 +56,7 @@ class PreferencesViewModel: ObservableObject {
         
     }
     
-    func getFromLLM() async throws {
+    func getFromLLM() {
         questionViewModel.setQuestions(questions: list2)
         print("QuestionsList:: ", questionViewModel.questionsList)
 
