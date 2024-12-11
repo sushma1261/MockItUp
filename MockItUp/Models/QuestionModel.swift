@@ -16,8 +16,20 @@ struct QuestionModel: Identifiable, Codable {
         self.id = id
         self.question = title
     }
+    var history: [AudioHistory] = []
+    static var sampleQuestionModel: QuestionModel {
+        QuestionModel(title: "Practice Question 1")
+    }
     
-    
+}
+
+
+extension QuestionModel {
+    static let sampleData: [QuestionModel] =
+    [
+        QuestionModel(title: "Practice Question 1"),
+        QuestionModel(title: "Practice Question 2")
+    ]
 }
 
 

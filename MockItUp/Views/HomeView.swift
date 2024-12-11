@@ -12,18 +12,18 @@ struct HomeView: View {
     
     @State var isPresented = false
     
-    @ObservedObject var questionsList: QuestionViewModel = QuestionViewModel()
-    
+    @Binding var questionsList: [QuestionModel]
+    @Binding var changeText: String
     var body: some View {
+        Spacer()
+//        Text(changeText)
         NavigationStack {
             List {
-                ForEach(questionsList.questionsList) { ques in
+                ForEach(questionsList) { ques in
                     NavigationLink(destination: QuestionPageView(questionModel: ques)) {
                         QuestionsListView(ques: ques)
-                            .safeAreaPadding(8)
                     }
                 }
-//                Spacer()
             }
         }
         .navigationTitle("Questions List")
@@ -31,5 +31,5 @@ struct HomeView: View {
 }
 
 #Preview {
-    HomeView()
+    HomeView(questionsList: .constant( QuestionViewModel.sampleQuestionsList), changeText: .constant("Test"))
 }
