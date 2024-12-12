@@ -3,37 +3,37 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 56;
+	objectVersion = 70;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		084315A62CC4717500FC4A72 /* PreferrencesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 084315A52CC4717500FC4A72 /* PreferrencesView.swift */; };
-		084315A82CC4718D00FC4A72 /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 084315A72CC4718C00FC4A72 /* SignInView.swift */; };
-		084315AA2CC471A200FC4A72 /* QuestionsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 084315A92CC471A200FC4A72 /* QuestionsListView.swift */; };
-		084315AC2CC471B300FC4A72 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 084315AB2CC471B300FC4A72 /* HomeView.swift */; };
-		084315AE2CC471C600FC4A72 /* QuestionPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 084315AD2CC471C600FC4A72 /* QuestionPageView.swift */; };
-		084315B02CC471D200FC4A72 /* FeedbackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 084315AF2CC471D200FC4A72 /* FeedbackView.swift */; };
+		082EFABA2CFFB982008C0829 /* FeedbackViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 082EFAB92CFFB97B008C0829 /* FeedbackViewModel.swift */; };
 		084315B22CC477EA00FC4A72 /* QuestionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 084315B12CC477EA00FC4A72 /* QuestionModel.swift */; };
 		084315B52CC47BA200FC4A72 /* Levels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 084315B42CC47BA200FC4A72 /* Levels.swift */; };
-		084315B72CC48A0F00FC4A72 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 084315B62CC48A0F00FC4A72 /* MainView.swift */; };
 		084315B92CC4951F00FC4A72 /* PreferencesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 084315B82CC4951F00FC4A72 /* PreferencesModel.swift */; };
 		084315BB2CC495FF00FC4A72 /* PreferencesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 084315BA2CC495FE00FC4A72 /* PreferencesViewModel.swift */; };
+		085DF41D2CF81E1200254764 /* AudioAnswer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 085DF41C2CF81E0100254764 /* AudioAnswer.swift */; };
+		085DF41F2CF81F3200254764 /* AudioHistory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 085DF41E2CF81F2E00254764 /* AudioHistory.swift */; };
+		085DF4212CF8207100254764 /* AudioStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 085DF4202CF8206C00254764 /* AudioStore.swift */; };
+		087AA4872CF6A3DB0022423D /* SpeechRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 087AA4852CF6A3DB0022423D /* SpeechRecognizer.swift */; };
+		087AA4882CF6A3DB0022423D /* AVPlayer+Ding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 087AA47F2CF6A3DB0022423D /* AVPlayer+Ding.swift */; };
+		087AA4892CF6A3DB0022423D /* DailyScrum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 087AA4802CF6A3DB0022423D /* DailyScrum.swift */; };
+		087AA48A2CF6A3DB0022423D /* ScrumTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 087AA4842CF6A3DB0022423D /* ScrumTimer.swift */; };
+		087AA48B2CF6A3DB0022423D /* ErrorWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 087AA4812CF6A3DB0022423D /* ErrorWrapper.swift */; };
+		087AA48C2CF6A3DB0022423D /* History.swift in Sources */ = {isa = PBXBuildFile; fileRef = 087AA4822CF6A3DB0022423D /* History.swift */; };
+		087AA48D2CF6A3DB0022423D /* ScrumStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 087AA4832CF6A3DB0022423D /* ScrumStore.swift */; };
+		087AA48E2CF6A3DB0022423D /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 087AA4862CF6A3DB0022423D /* Theme.swift */; };
+		087AA4B12CF6AA2D0022423D /* ding.wav in Resources */ = {isa = PBXBuildFile; fileRef = 087AA4AF2CF6AA2D0022423D /* ding.wav */; };
+		088012D42CE9AE7900F4EC79 /* GoogleGenerativeAI in Frameworks */ = {isa = PBXBuildFile; productRef = 088012D32CE9AE7900F4EC79 /* GoogleGenerativeAI */; };
+		088012D82CE9B03400F4EC79 /* APIKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = 088012D72CE9B03000F4EC79 /* APIKey.swift */; };
 		089774582CC33C5B00AD50F6 /* MockItUpApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 089774572CC33C5B00AD50F6 /* MockItUpApp.swift */; };
 		0897745C2CC33C5D00AD50F6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0897745B2CC33C5D00AD50F6 /* Assets.xcassets */; };
 		0897745F2CC33C5D00AD50F6 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0897745E2CC33C5D00AD50F6 /* Preview Assets.xcassets */; };
 		089774692CC33C5D00AD50F6 /* MockItUpTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 089774682CC33C5D00AD50F6 /* MockItUpTests.swift */; };
 		089774732CC33C5D00AD50F6 /* MockItUpUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 089774722CC33C5D00AD50F6 /* MockItUpUITests.swift */; };
 		089774752CC33C5D00AD50F6 /* MockItUpUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 089774742CC33C5D00AD50F6 /* MockItUpUITestsLaunchTests.swift */; };
-		089C63432CCDF2CD004BD505 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 089C63422CCDF2CD004BD505 /* CustomTextField.swift */; };
 		089C63452CCEA5BC004BD505 /* QuestionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 089C63442CCEA5BC004BD505 /* QuestionViewModel.swift */; };
-		089C63492CCEF6FF004BD505 /* AuthorizationChecker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 089C63482CCEF6FF004BD505 /* AuthorizationChecker.swift */; };
-		089C634B2CCEF756004BD505 /* AVCaptureSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = 089C634A2CCEF756004BD505 /* AVCaptureSession.swift */; };
 		089C634D2CCEFCB3004BD505 /* VideoContentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 089C634C2CCEFCB3004BD505 /* VideoContentViewModel.swift */; };
-		089C634F2CCEFCFB004BD505 /* Preview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 089C634E2CCEFCFB004BD505 /* Preview.swift */; };
-		089C63512CCEFD51004BD505 /* VideoContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 089C63502CCEFD51004BD505 /* VideoContentView.swift */; };
-		08C8A4532CC5970400662E21 /* ImageDemoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08C8A4522CC5970400662E21 /* ImageDemoView.swift */; };
-		08C8A4552CC5991900662E21 /* TabbedViewForStorageDemo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08C8A4542CC5991900662E21 /* TabbedViewForStorageDemo.swift */; };
-		08E573482CD14E0B007F693D /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08E573472CD14E0B007F693D /* ContentView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,17 +54,25 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		084315A52CC4717500FC4A72 /* PreferrencesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferrencesView.swift; sourceTree = "<group>"; };
-		084315A72CC4718C00FC4A72 /* SignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
-		084315A92CC471A200FC4A72 /* QuestionsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionsListView.swift; sourceTree = "<group>"; };
-		084315AB2CC471B300FC4A72 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
-		084315AD2CC471C600FC4A72 /* QuestionPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionPageView.swift; sourceTree = "<group>"; };
-		084315AF2CC471D200FC4A72 /* FeedbackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackView.swift; sourceTree = "<group>"; };
+		0802306A2D0A85C200D1CB63 /* FinalSubmission.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = FinalSubmission.md; sourceTree = "<group>"; };
+		082EFAB92CFFB97B008C0829 /* FeedbackViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackViewModel.swift; sourceTree = "<group>"; };
 		084315B12CC477EA00FC4A72 /* QuestionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionModel.swift; sourceTree = "<group>"; };
 		084315B42CC47BA200FC4A72 /* Levels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Levels.swift; sourceTree = "<group>"; };
-		084315B62CC48A0F00FC4A72 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		084315B82CC4951F00FC4A72 /* PreferencesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferencesModel.swift; sourceTree = "<group>"; };
 		084315BA2CC495FE00FC4A72 /* PreferencesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferencesViewModel.swift; sourceTree = "<group>"; };
+		085DF41C2CF81E0100254764 /* AudioAnswer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioAnswer.swift; sourceTree = "<group>"; };
+		085DF41E2CF81F2E00254764 /* AudioHistory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioHistory.swift; sourceTree = "<group>"; };
+		085DF4202CF8206C00254764 /* AudioStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AudioStore.swift; sourceTree = "<group>"; };
+		087AA47F2CF6A3DB0022423D /* AVPlayer+Ding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AVPlayer+Ding.swift"; sourceTree = "<group>"; };
+		087AA4802CF6A3DB0022423D /* DailyScrum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyScrum.swift; sourceTree = "<group>"; };
+		087AA4812CF6A3DB0022423D /* ErrorWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorWrapper.swift; sourceTree = "<group>"; };
+		087AA4822CF6A3DB0022423D /* History.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = History.swift; sourceTree = "<group>"; };
+		087AA4832CF6A3DB0022423D /* ScrumStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrumStore.swift; sourceTree = "<group>"; };
+		087AA4842CF6A3DB0022423D /* ScrumTimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrumTimer.swift; sourceTree = "<group>"; };
+		087AA4852CF6A3DB0022423D /* SpeechRecognizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeechRecognizer.swift; sourceTree = "<group>"; };
+		087AA4862CF6A3DB0022423D /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
+		087AA4AF2CF6AA2D0022423D /* ding.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = ding.wav; sourceTree = "<group>"; };
+		088012D72CE9B03000F4EC79 /* APIKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIKey.swift; sourceTree = "<group>"; };
 		089774542CC33C5B00AD50F6 /* MockItUp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MockItUp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		089774572CC33C5B00AD50F6 /* MockItUpApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockItUpApp.swift; sourceTree = "<group>"; };
 		0897745B2CC33C5D00AD50F6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -74,24 +82,22 @@
 		0897746E2CC33C5D00AD50F6 /* MockItUpUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MockItUpUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		089774722CC33C5D00AD50F6 /* MockItUpUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockItUpUITests.swift; sourceTree = "<group>"; };
 		089774742CC33C5D00AD50F6 /* MockItUpUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockItUpUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		089C63422CCDF2CD004BD505 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		089C63442CCEA5BC004BD505 /* QuestionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionViewModel.swift; sourceTree = "<group>"; };
-		089C63482CCEF6FF004BD505 /* AuthorizationChecker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationChecker.swift; sourceTree = "<group>"; };
-		089C634A2CCEF756004BD505 /* AVCaptureSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AVCaptureSession.swift; sourceTree = "<group>"; };
 		089C634C2CCEFCB3004BD505 /* VideoContentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoContentViewModel.swift; sourceTree = "<group>"; };
-		089C634E2CCEFCFB004BD505 /* Preview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Preview.swift; sourceTree = "<group>"; };
-		089C63502CCEFD51004BD505 /* VideoContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoContentView.swift; sourceTree = "<group>"; };
-		08C8A4522CC5970400662E21 /* ImageDemoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageDemoView.swift; sourceTree = "<group>"; };
-		08C8A4542CC5991900662E21 /* TabbedViewForStorageDemo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabbedViewForStorageDemo.swift; sourceTree = "<group>"; };
 		08C8A4582CC5E54100662E21 /* StorageOptionsDocumentation.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = StorageOptionsDocumentation.md; sourceTree = "<group>"; };
-		08E573472CD14E0B007F693D /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		08F7D4302CFFDE5B00E71D3C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		085DF4492CF822B700254764 /* Views */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = Views; sourceTree = "<group>"; };
+/* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		089774512CC33C5B00AD50F6 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				088012D42CE9AE7900F4EC79 /* GoogleGenerativeAI in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -115,37 +121,27 @@
 		084315A22CC46BC800FC4A72 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				087AA47F2CF6A3DB0022423D /* AVPlayer+Ding.swift */,
+				087AA4802CF6A3DB0022423D /* DailyScrum.swift */,
+				085DF41C2CF81E0100254764 /* AudioAnswer.swift */,
+				087AA4812CF6A3DB0022423D /* ErrorWrapper.swift */,
+				087AA4822CF6A3DB0022423D /* History.swift */,
+				085DF41E2CF81F2E00254764 /* AudioHistory.swift */,
+				087AA4832CF6A3DB0022423D /* ScrumStore.swift */,
+				085DF4202CF8206C00254764 /* AudioStore.swift */,
+				087AA4842CF6A3DB0022423D /* ScrumTimer.swift */,
+				087AA4852CF6A3DB0022423D /* SpeechRecognizer.swift */,
+				087AA4862CF6A3DB0022423D /* Theme.swift */,
 				084315B12CC477EA00FC4A72 /* QuestionModel.swift */,
 				084315B82CC4951F00FC4A72 /* PreferencesModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
 		};
-		084315A32CC46BCF00FC4A72 /* Views */ = {
-			isa = PBXGroup;
-			children = (
-				089C63412CCDF2B5004BD505 /* Common */,
-				084315A52CC4717500FC4A72 /* PreferrencesView.swift */,
-				084315A72CC4718C00FC4A72 /* SignInView.swift */,
-				084315A92CC471A200FC4A72 /* QuestionsListView.swift */,
-				084315AB2CC471B300FC4A72 /* HomeView.swift */,
-				084315AD2CC471C600FC4A72 /* QuestionPageView.swift */,
-				084315AF2CC471D200FC4A72 /* FeedbackView.swift */,
-				084315B62CC48A0F00FC4A72 /* MainView.swift */,
-				08C8A4522CC5970400662E21 /* ImageDemoView.swift */,
-				08C8A4542CC5991900662E21 /* TabbedViewForStorageDemo.swift */,
-				089C63482CCEF6FF004BD505 /* AuthorizationChecker.swift */,
-				089C634A2CCEF756004BD505 /* AVCaptureSession.swift */,
-				089C634E2CCEFCFB004BD505 /* Preview.swift */,
-				089C63502CCEFD51004BD505 /* VideoContentView.swift */,
-				08E573472CD14E0B007F693D /* ContentView.swift */,
-			);
-			path = Views;
-			sourceTree = "<group>";
-		};
 		084315A42CC46D8400FC4A72 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				082EFAB92CFFB97B008C0829 /* FeedbackViewModel.swift */,
 				084315BA2CC495FE00FC4A72 /* PreferencesViewModel.swift */,
 				089C63442CCEA5BC004BD505 /* QuestionViewModel.swift */,
 				089C634C2CCEFCB3004BD505 /* VideoContentViewModel.swift */,
@@ -156,9 +152,18 @@
 		084315B32CC47B7600FC4A72 /* enums */ = {
 			isa = PBXGroup;
 			children = (
+				088012D72CE9B03000F4EC79 /* APIKey.swift */,
 				084315B42CC47BA200FC4A72 /* Levels.swift */,
 			);
 			path = enums;
+			sourceTree = "<group>";
+		};
+		087AA4B02CF6AA2D0022423D /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				087AA4AF2CF6AA2D0022423D /* ding.wav */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 		0897744B2CC33C5B00AD50F6 = {
@@ -184,14 +189,16 @@
 		089774562CC33C5B00AD50F6 /* MockItUp */ = {
 			isa = PBXGroup;
 			children = (
+				08F7D4302CFFDE5B00E71D3C /* Info.plist */,
 				08C8A4592CC5EB7D00662E21 /* Documents */,
 				084315B32CC47B7600FC4A72 /* enums */,
 				084315A42CC46D8400FC4A72 /* ViewModels */,
-				084315A32CC46BCF00FC4A72 /* Views */,
+				085DF4492CF822B700254764 /* Views */,
 				084315A22CC46BC800FC4A72 /* Models */,
 				089774572CC33C5B00AD50F6 /* MockItUpApp.swift */,
 				0897745B2CC33C5D00AD50F6 /* Assets.xcassets */,
 				0897745D2CC33C5D00AD50F6 /* Preview Content */,
+				087AA4B02CF6AA2D0022423D /* Resources */,
 			);
 			path = MockItUp;
 			sourceTree = "<group>";
@@ -221,17 +228,10 @@
 			path = MockItUpUITests;
 			sourceTree = "<group>";
 		};
-		089C63412CCDF2B5004BD505 /* Common */ = {
-			isa = PBXGroup;
-			children = (
-				089C63422CCDF2CD004BD505 /* CustomTextField.swift */,
-			);
-			path = Common;
-			sourceTree = "<group>";
-		};
 		08C8A4592CC5EB7D00662E21 /* Documents */ = {
 			isa = PBXGroup;
 			children = (
+				0802306A2D0A85C200D1CB63 /* FinalSubmission.md */,
 				08C8A4582CC5E54100662E21 /* StorageOptionsDocumentation.md */,
 			);
 			path = Documents;
@@ -251,6 +251,9 @@
 			buildRules = (
 			);
 			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				085DF4492CF822B700254764 /* Views */,
 			);
 			name = MockItUp;
 			productName = MockItUp;
@@ -325,6 +328,9 @@
 				Base,
 			);
 			mainGroup = 0897744B2CC33C5B00AD50F6;
+			packageReferences = (
+				088012D22CE9AE7900F4EC79 /* XCRemoteSwiftPackageReference "generative-ai-swift" */,
+			);
 			productRefGroup = 089774552CC33C5B00AD50F6 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -341,6 +347,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				087AA4B12CF6AA2D0022423D /* ding.wav in Resources */,
 				0897745F2CC33C5D00AD50F6 /* Preview Assets.xcassets in Resources */,
 				0897745C2CC33C5D00AD50F6 /* Assets.xcassets in Resources */,
 			);
@@ -368,27 +375,25 @@
 			buildActionMask = 2147483647;
 			files = (
 				084315B52CC47BA200FC4A72 /* Levels.swift in Sources */,
-				084315AA2CC471A200FC4A72 /* QuestionsListView.swift in Sources */,
-				089C634F2CCEFCFB004BD505 /* Preview.swift in Sources */,
-				084315A62CC4717500FC4A72 /* PreferrencesView.swift in Sources */,
-				084315B72CC48A0F00FC4A72 /* MainView.swift in Sources */,
-				089C634B2CCEF756004BD505 /* AVCaptureSession.swift in Sources */,
-				084315AC2CC471B300FC4A72 /* HomeView.swift in Sources */,
-				089C63492CCEF6FF004BD505 /* AuthorizationChecker.swift in Sources */,
-				08C8A4552CC5991900662E21 /* TabbedViewForStorageDemo.swift in Sources */,
+				082EFABA2CFFB982008C0829 /* FeedbackViewModel.swift in Sources */,
+				085DF41F2CF81F3200254764 /* AudioHistory.swift in Sources */,
+				087AA4872CF6A3DB0022423D /* SpeechRecognizer.swift in Sources */,
+				087AA4882CF6A3DB0022423D /* AVPlayer+Ding.swift in Sources */,
+				087AA4892CF6A3DB0022423D /* DailyScrum.swift in Sources */,
+				087AA48A2CF6A3DB0022423D /* ScrumTimer.swift in Sources */,
+				085DF4212CF8207100254764 /* AudioStore.swift in Sources */,
+				087AA48B2CF6A3DB0022423D /* ErrorWrapper.swift in Sources */,
+				087AA48C2CF6A3DB0022423D /* History.swift in Sources */,
+				087AA48D2CF6A3DB0022423D /* ScrumStore.swift in Sources */,
+				087AA48E2CF6A3DB0022423D /* Theme.swift in Sources */,
+				085DF41D2CF81E1200254764 /* AudioAnswer.swift in Sources */,
+				088012D82CE9B03400F4EC79 /* APIKey.swift in Sources */,
 				089C63452CCEA5BC004BD505 /* QuestionViewModel.swift in Sources */,
 				089C634D2CCEFCB3004BD505 /* VideoContentViewModel.swift in Sources */,
-				084315AE2CC471C600FC4A72 /* QuestionPageView.swift in Sources */,
-				08E573482CD14E0B007F693D /* ContentView.swift in Sources */,
-				084315B02CC471D200FC4A72 /* FeedbackView.swift in Sources */,
-				089C63512CCEFD51004BD505 /* VideoContentView.swift in Sources */,
 				084315BB2CC495FF00FC4A72 /* PreferencesViewModel.swift in Sources */,
-				08C8A4532CC5970400662E21 /* ImageDemoView.swift in Sources */,
-				084315A82CC4718D00FC4A72 /* SignInView.swift in Sources */,
 				084315B92CC4951F00FC4A72 /* PreferencesModel.swift in Sources */,
 				089774582CC33C5B00AD50F6 /* MockItUpApp.swift in Sources */,
 				084315B22CC477EA00FC4A72 /* QuestionModel.swift in Sources */,
-				089C63432CCDF2CD004BD505 /* CustomTextField.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -555,10 +560,12 @@
 				DEVELOPMENT_TEAM = 9ZF9BX8WR8;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = MockItUp/Info.plist;
 				INFOPLIST_KEY_NSCameraUsageDescription = "I'll use camera!";
 				INFOPLIST_KEY_NSMicrophoneUsageDescription = "I'll Use Microphone";
 				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "I'll use photos";
 				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "Need access to save recordings";
+				INFOPLIST_KEY_NSSpeechRecognitionUsageDescription = "Permission of audio";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -588,10 +595,12 @@
 				DEVELOPMENT_TEAM = 9ZF9BX8WR8;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = MockItUp/Info.plist;
 				INFOPLIST_KEY_NSCameraUsageDescription = "I'll use camera!";
 				INFOPLIST_KEY_NSMicrophoneUsageDescription = "I'll Use Microphone";
 				INFOPLIST_KEY_NSPhotoLibraryAddUsageDescription = "I'll use photos";
 				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "Need access to save recordings";
+				INFOPLIST_KEY_NSSpeechRecognitionUsageDescription = "Permission of audio";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -722,6 +731,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		088012D22CE9AE7900F4EC79 /* XCRemoteSwiftPackageReference "generative-ai-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/google/generative-ai-swift";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.5.6;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		088012D32CE9AE7900F4EC79 /* GoogleGenerativeAI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 088012D22CE9AE7900F4EC79 /* XCRemoteSwiftPackageReference "generative-ai-swift" */;
+			productName = GoogleGenerativeAI;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 0897744C2CC33C5B00AD50F6 /* Project object */;
 }
