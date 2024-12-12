@@ -8,7 +8,9 @@ Not collecting any user specific data. Storing password in excrypted format. In 
 
 ## Challenges Addressed:
 Cross-Device Consistency: Adaptive design and Auto Layout optimize the app for different iOS devices and screen sizes.
+
 Real-Time Performance: Efficient ML model integration ensures fast feedback without compromising app performance.
+
 Offline Functionality: Key features like feedback history and references are accessible offline, ensuring usability in limited connectivity scenarios.
 
 ## User Experience:
